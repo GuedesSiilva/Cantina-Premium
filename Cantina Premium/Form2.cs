@@ -32,5 +32,30 @@ namespace Cantina_Premium
             Cardapio.Items.Add(new Cardapio("Suco", 4.00, 0));
             Cardapio.Items.Add(new Cardapio("Brigadeiro", 2.00, 0));
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pedindo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

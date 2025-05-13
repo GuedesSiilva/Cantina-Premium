@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 143,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form1.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Form1.cs",
               "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form1.cs",
               "RelativeToolTip": "Cantina Premium\\Form1.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAUwCMAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAtwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T13:27:46Z",
               "IsPinned": true,
@@ -52,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form1.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Form1.cs",
@@ -65,12 +65,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form2.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Form2.cs",
-              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs [Projeto]*",
-              "RelativeToolTip": "Cantina Premium\\Form2.cs [Projeto]*",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs [Projeto]",
+              "RelativeToolTip": "Cantina Premium\\Form2.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T13:46:52.754Z",
               "IsPinned": true,
@@ -78,13 +78,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Form2.cs",
-              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs*",
-              "RelativeToolTip": "Cantina Premium\\Form2.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAABCAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs",
+              "RelativeToolTip": "Cantina Premium\\Form2.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAvwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T14:00:05.025Z",
               "IsPinned": true,
@@ -92,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Class1.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Class1.cs",
@@ -106,13 +106,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Program.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Program.cs",
               "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Program.cs",
               "RelativeToolTip": "Cantina Premium\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T14:06:02.202Z",
               "EditorCaption": ""
