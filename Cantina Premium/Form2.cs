@@ -26,11 +26,16 @@ namespace Cantina_Premium
         }
         public void Form2_Load(object sender, EventArgs e)
         {
+            Cardapio.Items.Add(new Cardapio("Pão de Queijo", 3.50, 0));
             Cardapio.Items.Add(new Cardapio("Coxinha", 5.00, 0));
-            Cardapio.Items.Add(new Cardapio("Pastel", 6.00, 0));
-            Cardapio.Items.Add(new Cardapio("Refrigerante", 3.00, 0));
-            Cardapio.Items.Add(new Cardapio("Suco", 4.00, 0));
-            Cardapio.Items.Add(new Cardapio("Brigadeiro", 2.00, 0));
+            Cardapio.Items.Add(new Cardapio("Pastel de Carne", 6.00, 0));
+            Cardapio.Items.Add(new Cardapio("Pastel de Queijo", 5.50, 0));
+            Cardapio.Items.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0));
+            Cardapio.Items.Add(new Cardapio("Refrigerante Lata", 4.50, 0));
+            Cardapio.Items.Add(new Cardapio("Hambúrguer Simples", 8.00, 0));
+            Cardapio.Items.Add(new Cardapio("Hambúrguer com Queijo", 9.00, 0));
+            Cardapio.Items.Add(new Cardapio("X-Tudo", 12.00, 0));
+            Cardapio.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0));
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -55,7 +60,46 @@ namespace Cantina_Premium
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (Cardapio.SelectedItem is Cardapio produtoSelecionado)
+            {
+                bool encontrado = false;
+                foreach (Cardapio item in Pedindo.Items)
+                {
+                    if (item.Nome == produtoSelecionado.Nome)
+                    {
+                        item.Quantidade++;
+                        item.Preco += produtoSelecionado.Preco;
+                        encontrado = true;
+
+                        int index = Pedindo.Items.IndexOf(item);
+                        Pedindo.Items.RemoveAt(index);
+                        Pedindo.Items.Insert(index, item);
+
+                        break;
+                    }
+                }
+                if (!encontrado)
+                {
+                    Cardapio novoItem = new Cardapio(produtoSelecionado.Nome, produtoSelecionado.Preco, 1);
+                    Pedindo.Items.Add(novoItem);
+                }
+
+                double somaTotal = 0;
+                foreach (Cardapio item in Pedindo.Items)
+                {
+                    somaTotal += item.Preco;
+                }
+                label3.Text = "R$ " + somaTotal.ToString("F2");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um item válido do cardápio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
