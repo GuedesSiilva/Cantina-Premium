@@ -171,7 +171,27 @@ namespace Cantina_Premium
                 mensagem += "- " + item.ToString() + "\n";
             }
             mensagem += $"\nTotal: R$ {somaFinal:F2}";
-            MessageBox.Show(mensagem, "Pedidos Realizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mensagem += "\n\nEstes pedidos estão corretos?";
+            DialogResult resultado = MessageBox.Show(mensagem, "Confirmação de Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado== DialogResult.Yes)
+            {
+                MessageBox.Show("Pedido realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Pedindo.Items.Clear();
+                label3.Text = "R$ 0,00";
+            }
+            else
+            {
+                DialogResult resultado2 = MessageBox.Show("Deseja remover todos os itens do pedido?", "Remover Itens", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+                if (resultado2 == DialogResult.Yes)
+                {
+                    Pedindo.Items.Clear();
+                    label3.Text = "R$ 0,00";
+                }
+                else
+                {
+                    MessageBox.Show("Os itens permanecerão no pedido.", "Itens Mantidos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

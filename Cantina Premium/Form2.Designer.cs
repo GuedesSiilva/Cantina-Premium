@@ -46,9 +46,9 @@
             // Cardapio
             // 
             Cardapio.BackColor = Color.FromArgb(243, 241, 238);
-            Cardapio.Font = new Font("Consolas", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Cardapio.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Cardapio.FormattingEnabled = true;
-            Cardapio.ItemHeight = 28;
+            Cardapio.ItemHeight = 32;
             Cardapio.Location = new Point(14, 132);
             Cardapio.Margin = new Padding(3, 4, 3, 4);
             Cardapio.Name = "Cardapio";
@@ -73,13 +73,12 @@
             // Pedindo
             // 
             Pedindo.BackColor = Color.FromArgb(243, 241, 238);
-            Pedindo.Font = new Font("Consolas", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Pedindo.Font = new Font("Consolas", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pedindo.FormattingEnabled = true;
-            Pedindo.ItemHeight = 17;
-            Pedindo.Location = new Point(645, 67);
+            Pedindo.Location = new Point(642, 67);
             Pedindo.Margin = new Padding(3, 4, 3, 4);
             Pedindo.Name = "Pedindo";
-            Pedindo.Size = new Size(370, 293);
+            Pedindo.Size = new Size(370, 284);
             Pedindo.TabIndex = 2;
             Pedindo.SelectedIndexChanged += Pedindo_SelectedIndexChanged;
             // 
@@ -136,7 +135,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(645, 35);
+            label2.Location = new Point(642, 35);
             label2.Name = "label2";
             label2.Size = new Size(122, 28);
             label2.TabIndex = 7;
@@ -147,10 +146,10 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.White;
-            label3.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(755, 572);
+            label3.Font = new Font("Inter SemiBold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(762, 573);
             label3.Name = "label3";
-            label3.Size = new Size(135, 43);
+            label3.Size = new Size(150, 49);
             label3.TabIndex = 8;
             label3.Text = "R$ 0,00";
             label3.Click += label3_Click;
