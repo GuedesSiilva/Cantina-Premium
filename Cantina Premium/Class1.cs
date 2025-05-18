@@ -19,7 +19,7 @@ namespace Cantina_Premium
         }
         public override string ToString()
         {
-            return $"{Nome, - 21} - R$ {Preco,-5:F2} - Qtd: {Quantidade, -3}";
+            return $"{Nome, - 21}- R${Preco,-5:F2} - Qtd: {Quantidade, -3}";
         }
     }
 }

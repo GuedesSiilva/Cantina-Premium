@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Cantina Premium.csproj": {}
+    "D:\\Games\\Códigos VS\\Cantina Premium\\Cantina Premium.csproj": {}
   },
   "projects": {
-    "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Cantina Premium.csproj": {
+    "D:\\Games\\Códigos VS\\Cantina Premium\\Cantina Premium.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Cantina Premium.csproj",
+        "projectUniqueName": "D:\\Games\\Códigos VS\\Cantina Premium\\Cantina Premium.csproj",
         "projectName": "Cantina Premium",
-        "projectPath": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Cantina Premium.csproj",
-        "packagesPath": "C:\\Users\\25163231\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\obj\\",
+        "projectPath": "D:\\Games\\Códigos VS\\Cantina Premium\\Cantina Premium.csproj",
+        "packagesPath": "C:\\Users\\cesar\\.nuget\\packages\\",
+        "outputPath": "D:\\Games\\Códigos VS\\Cantina Premium\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\25163231\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -68,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

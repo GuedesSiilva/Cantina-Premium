@@ -17,3 +17,22 @@ C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-wi
 C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\ref\Cantina Premium.dll
 C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form2.resources
 C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.sourcelink.json
+D:\Games\Códigos VS\Cantina Premium\bin\Debug\net8.0-windows\Cantina Premium.exe
+D:\Games\Códigos VS\Cantina Premium\bin\Debug\net8.0-windows\Cantina Premium.deps.json
+D:\Games\Códigos VS\Cantina Premium\bin\Debug\net8.0-windows\Cantina Premium.runtimeconfig.json
+D:\Games\Códigos VS\Cantina Premium\bin\Debug\net8.0-windows\Cantina Premium.dll
+D:\Games\Códigos VS\Cantina Premium\bin\Debug\net8.0-windows\Cantina Premium.pdb
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form1.resources
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form2.resources
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Properties.Resources.resources
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.csproj.GenerateResource.cache
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.GeneratedMSBuildEditorConfig.editorconfig
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.AssemblyInfoInputs.cache
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.AssemblyInfo.cs
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.csproj.CoreCompileInputs.cache
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.sourcelink.json
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.dll
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\refint\Cantina Premium.dll
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.pdb
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.genruntimeconfig.cache
+D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\ref\Cantina Premium.dll
