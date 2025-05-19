@@ -20,6 +20,7 @@ namespace Cantina_Premium
 
         }
 
+
         private void Cardapio_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -150,10 +151,10 @@ namespace Cantina_Premium
                 MessageBox.Show("Por favor, selecione um item válido do cardápio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
-            double somaFinal = 0;
+            
+                double somaFinal = 0;
             foreach (Cardapio item in Pedindo.Items)
             { 
                 somaFinal += item.Preco;
@@ -163,6 +164,19 @@ namespace Cantina_Premium
                 MessageBox.Show("Nenhum pedido foi realizado no momento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Por favor, insira o nome do cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Form3 form3 = new Form3();
+            form3.SomaFinal = somaFinal;
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                string forma = form3.FormaSelecionada;
+                MessageBox.Show("Forma de pagamento: " + forma);
+            }
 
             string mensagem = "Você realizou os seguintes pedidos:\n\n";
 
@@ -171,11 +185,16 @@ namespace Cantina_Premium
                 mensagem += "- " + item.ToString() + "\n";
             }
             mensagem += $"\nTotal: R$ {somaFinal:F2}";
+            mensagem += "\nTroco: R$ " + (form3.Troco).ToString("F2");
             mensagem += "\n\nEstes pedidos estão corretos?";
             DialogResult resultado = MessageBox.Show(mensagem, "Confirmação de Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (resultado== DialogResult.Yes)
             {
-                MessageBox.Show("Pedido realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                string nomeCliente = textBox1.Text;
+                MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 Pedindo.Items.Clear();
                 label3.Text = "R$ 0,00";
             }

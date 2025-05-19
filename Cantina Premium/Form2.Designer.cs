@@ -39,6 +39,8 @@
             label2 = new Label();
             label3 = new Label();
             pictureBox2 = new PictureBox();
+            textBox1 = new TextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -46,13 +48,13 @@
             // Cardapio
             // 
             Cardapio.BackColor = Color.FromArgb(243, 241, 238);
-            Cardapio.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Cardapio.Font = new Font("Consolas", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Cardapio.FormattingEnabled = true;
-            Cardapio.ItemHeight = 32;
+            Cardapio.ItemHeight = 28;
             Cardapio.Location = new Point(14, 132);
             Cardapio.Margin = new Padding(3, 4, 3, 4);
             Cardapio.Name = "Cardapio";
-            Cardapio.Size = new Size(608, 452);
+            Cardapio.Size = new Size(608, 424);
             Cardapio.TabIndex = 0;
             Cardapio.SelectedIndexChanged += Cardapio_SelectedIndexChanged;
             // 
@@ -73,12 +75,13 @@
             // Pedindo
             // 
             Pedindo.BackColor = Color.FromArgb(243, 241, 238);
-            Pedindo.Font = new Font("Consolas", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Pedindo.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pedindo.FormattingEnabled = true;
+            Pedindo.ItemHeight = 18;
             Pedindo.Location = new Point(642, 67);
             Pedindo.Margin = new Padding(3, 4, 3, 4);
             Pedindo.Name = "Pedindo";
-            Pedindo.Size = new Size(370, 284);
+            Pedindo.Size = new Size(370, 274);
             Pedindo.TabIndex = 2;
             Pedindo.SelectedIndexChanged += Pedindo_SelectedIndexChanged;
             // 
@@ -126,7 +129,7 @@
             label1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(14, 100);
             label1.Name = "label1";
-            label1.Size = new Size(131, 28);
+            label1.Size = new Size(107, 23);
             label1.TabIndex = 6;
             label1.Text = "\U0001f6d2 Cardápio";
             label1.Click += label1_Click;
@@ -137,7 +140,7 @@
             label2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(642, 35);
             label2.Name = "label2";
-            label2.Size = new Size(122, 28);
+            label2.Size = new Size(99, 23);
             label2.TabIndex = 7;
             label2.Text = "🍔 Pedidos";
             label2.Click += label2_Click;
@@ -147,9 +150,9 @@
             label3.AutoSize = true;
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter SemiBold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(762, 573);
+            label3.Location = new Point(777, 577);
             label3.Name = "label3";
-            label3.Size = new Size(150, 49);
+            label3.Size = new Size(121, 39);
             label3.TabIndex = 8;
             label3.Text = "R$ 0,00";
             label3.Click += label3_Click;
@@ -165,12 +168,32 @@
             pictureBox2.TabIndex = 9;
             pictureBox2.TabStop = false;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(164, 67);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(428, 33);
+            textBox1.TabIndex = 10;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(324, 35);
+            label4.Name = "label4";
+            label4.Size = new Size(87, 23);
+            label4.TabIndex = 11;
+            label4.Text = "👤Cliente";
+            // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(9F, 22F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(1028, 660);
+            Controls.Add(label4);
+            Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -203,5 +226,7 @@
         private Label label2;
         private Label label3;
         private PictureBox pictureBox2;
+        private TextBox textBox1;
+        private Label label4;
     }
 }

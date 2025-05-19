@@ -36,3 +36,4 @@ D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\refint\Cantina Pre
 D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.pdb
 D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\Cantina Premium.genruntimeconfig.cache
 D:\Games\Códigos VS\Cantina Premium\obj\Debug\net8.0-windows\ref\Cantina Premium.dll
+C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form3.resources

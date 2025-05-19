@@ -1,29 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Games\\C\u00F3digos VS\\",
+  "WorkspaceRootPath": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|D:\\Games\\C\u00F3digos VS\\cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|d:\\games\\c\u00F3digos vs\\cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|d:\\games\\c\u00F3digos vs\\cantina premium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|d:\\games\\c\u00F3digos vs\\cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|d:\\games\\c\u00F3digos vs\\cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|d:\\games\\c\u00F3digos vs\\cantina premium\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|c:\\users\\25163231\\codigos\\vs\\cantina premium\\cantina premium\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8128C40-86AD-4D26-931E-868AD2A2C712}|Cantina Premium\\Cantina Premium.csproj|solutionrelative:cantina premium\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,15 +42,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form1.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Form1.cs",
-              "ToolTip": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form1.cs [Projeto]",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form1.cs [Projeto]",
               "RelativeToolTip": "Cantina Premium\\Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T00:21:31.443Z",
@@ -51,39 +59,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form1.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Form1.cs",
-              "ToolTip": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form1.cs",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form1.cs",
               "RelativeToolTip": "Cantina Premium\\Form1.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAewEAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T00:22:15.947Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form2.cs [Projeto]",
-              "DocumentMoniker": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form2.cs",
-              "RelativeDocumentMoniker": "Cantina Premium\\Form2.cs",
-              "ToolTip": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form2.cs [Projeto]",
-              "RelativeToolTip": "Cantina Premium\\Form2.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T00:22:07.078Z",
               "IsPinned": true,
-              "EditorCaption": " [Projeto]"
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form2.cs",
-              "DocumentMoniker": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form2.cs",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Form2.cs",
-              "ToolTip": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Form2.cs",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs",
               "RelativeToolTip": "Cantina Premium\\Form2.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAiwGcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALQAAAAAAAAAAAAAALsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T00:22:11.636Z",
               "IsPinned": true,
@@ -91,28 +87,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form3.cs",
+              "RelativeDocumentMoniker": "Cantina Premium\\Form3.cs",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form3.cs",
+              "RelativeToolTip": "Cantina Premium\\Form3.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwvxYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T12:01:35.74Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form3.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form3.cs",
+              "RelativeDocumentMoniker": "Cantina Premium\\Form3.cs",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form3.cs [Projeto]",
+              "RelativeToolTip": "Cantina Premium\\Form3.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T13:32:32.545Z",
+              "IsPinned": true,
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form2.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs",
+              "RelativeDocumentMoniker": "Cantina Premium\\Form2.cs",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Form2.cs [Projeto]",
+              "RelativeToolTip": "Cantina Premium\\Form2.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T00:22:07.078Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Program.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Program.cs",
-              "ToolTip": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Program.cs",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Program.cs",
               "RelativeToolTip": "Cantina Premium\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T00:22:29.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Class1.cs",
-              "DocumentMoniker": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Class1.cs",
+              "DocumentMoniker": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Class1.cs",
               "RelativeDocumentMoniker": "Cantina Premium\\Class1.cs",
-              "ToolTip": "D:\\Games\\C\u00F3digos VS\\Cantina Premium\\Class1.cs",
+              "ToolTip": "C:\\Users\\25163231\\codigos\\VS\\Cantina Premium\\Cantina Premium\\Class1.cs",
               "RelativeToolTip": "Cantina Premium\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T00:21:17.975Z"
+              "WhenOpened": "2025-05-18T00:21:17.975Z",
+              "EditorCaption": ""
             }
           ]
         }
