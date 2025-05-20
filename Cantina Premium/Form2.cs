@@ -13,6 +13,7 @@ namespace Cantina_Premium
 {
     public partial class Form2 : Form
     {
+        public DateTime HorarioPedido { get; private set; } = DateTime.Now;
         public Form2()
         {
             InitializeComponent();
@@ -153,10 +154,10 @@ namespace Cantina_Premium
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            
-                double somaFinal = 0;
+
+            double somaFinal = 0;
             foreach (Cardapio item in Pedindo.Items)
-            { 
+            {
                 somaFinal += item.Preco;
             }
             if (Pedindo.Items.Count == 0)
@@ -177,8 +178,10 @@ namespace Cantina_Premium
                 string forma = form3.FormaSelecionada;
                 MessageBox.Show("Forma de pagamento: " + forma);
             }
+            string nomeCliente = textBox1.Text;
 
-            string mensagem = "Você realizou os seguintes pedidos:\n\n";
+            string mensagem = $"{HorarioPedido}";
+            mensagem += $"\n{nomeCliente} realizou os seguintes pedidos:\n\n";
 
             foreach (var item in Pedindo.Items)
             {
@@ -189,20 +192,22 @@ namespace Cantina_Premium
             mensagem += "\n\nEstes pedidos estão corretos?";
             DialogResult resultado = MessageBox.Show(mensagem, "Confirmação de Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (resultado== DialogResult.Yes)
+            if (resultado == DialogResult.Yes)
             {
+
                 
-                string nomeCliente = textBox1.Text;
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
+                textBox1.Clear();
                 Pedindo.Items.Clear();
                 label3.Text = "R$ 0,00";
             }
             else
             {
-                DialogResult resultado2 = MessageBox.Show("Deseja remover todos os itens do pedido?", "Remover Itens", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+                DialogResult resultado2 = MessageBox.Show("Deseja remover todos os itens do pedido?", "Remover Itens", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado2 == DialogResult.Yes)
                 {
+                    textBox1.Clear();
                     Pedindo.Items.Clear();
                     label3.Text = "R$ 0,00";
                 }
@@ -211,6 +216,17 @@ namespace Cantina_Premium
                     MessageBox.Show("Os itens permanecerão no pedido.", "Itens Mantidos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Pedindo.Items.Clear();
+            label3.Text = "R$ 0,00";
         }
     }
 }

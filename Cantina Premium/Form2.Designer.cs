@@ -41,6 +41,7 @@
             pictureBox2 = new PictureBox();
             textBox1 = new TextBox();
             label4 = new Label();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(230, 255, 0);
+            button1.BackColor = Color.FromArgb(243, 241, 238);
             button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlText;
             button1.Location = new Point(744, 380);
@@ -87,7 +88,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(230, 255, 0);
+            button2.BackColor = Color.FromArgb(243, 241, 238);
             button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(744, 439);
             button2.Margin = new Padding(3, 4, 3, 4);
@@ -126,10 +127,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 100);
+            label1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 98);
             label1.Name = "label1";
-            label1.Size = new Size(107, 23);
+            label1.Size = new Size(139, 30);
             label1.TabIndex = 6;
             label1.Text = "\U0001f6d2 Cardápio";
             label1.Click += label1_Click;
@@ -137,10 +138,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(642, 35);
+            label2.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(642, 33);
             label2.Name = "label2";
-            label2.Size = new Size(99, 23);
+            label2.Size = new Size(130, 30);
             label2.TabIndex = 7;
             label2.Text = "🍔 Pedidos";
             label2.Click += label2_Click;
@@ -150,7 +151,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter SemiBold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(777, 577);
+            label3.Location = new Point(777, 576);
             label3.Name = "label3";
             label3.Size = new Size(121, 39);
             label3.TabIndex = 8;
@@ -170,6 +171,7 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.FromArgb(243, 241, 238);
             textBox1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(164, 67);
             textBox1.Name = "textBox1";
@@ -179,12 +181,22 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(324, 35);
+            label4.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(311, 33);
             label4.Name = "label4";
-            label4.Size = new Size(87, 23);
+            label4.Size = new Size(112, 30);
             label4.TabIndex = 11;
             label4.Text = "👤Cliente";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(977, 28);
+            button4.Name = "button4";
+            button4.Size = new Size(35, 32);
+            button4.TabIndex = 12;
+            button4.Text = "✖";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form2
             // 
@@ -192,6 +204,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(1028, 660);
+            Controls.Add(button4);
             Controls.Add(label4);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -228,5 +241,6 @@
         private PictureBox pictureBox2;
         private TextBox textBox1;
         private Label label4;
+        private Button button4;
     }
 }

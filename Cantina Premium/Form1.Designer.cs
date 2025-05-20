@@ -42,7 +42,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(230, 255, 0);
+            pictureBox1.BackColor = Color.FromArgb(17, 25, 12);
             pictureBox1.Location = new Point(-62, -9);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
@@ -52,7 +52,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(124, 122, 106);
+            button1.BackColor = Color.FromArgb(243, 241, 238);
             button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(268, 441);
             button1.Margin = new Padding(3, 4, 3, 4);
@@ -64,7 +64,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(124, 122, 106);
+            button2.BackColor = Color.FromArgb(243, 241, 238);
             button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(544, 441);
             button2.Margin = new Padding(3, 4, 3, 4);
@@ -105,11 +105,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(202, 196, 183);
+            label2.BackColor = Color.FromArgb(243, 241, 238);
             label2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(466, 245);
             label2.Name = "label2";
-            label2.Size = new Size(73, 28);
+            label2.Size = new Size(59, 23);
             label2.TabIndex = 8;
             label2.Text = "LOGIN";
             // 
@@ -127,7 +127,7 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(9F, 22F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1028, 660);
             Controls.Add(pictureBox2);
