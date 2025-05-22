@@ -218,9 +218,11 @@
             Controls.Add(Cardapio);
             Controls.Add(pictureBox2);
             Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form2";
-            Text = "Form2";
+            Text = "Tela de Vendas";
+            Load += Form2_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

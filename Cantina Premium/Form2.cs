@@ -195,7 +195,7 @@ namespace Cantina_Premium
             if (resultado == DialogResult.Yes)
             {
 
-                
+
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 textBox1.Clear();
@@ -227,6 +227,11 @@ namespace Cantina_Premium
         {
             Pedindo.Items.Clear();
             label3.Text = "R$ 0,00";
+        }
+
+        private void Form2_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
