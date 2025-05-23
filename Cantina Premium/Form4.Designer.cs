@@ -37,16 +37,19 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // Pedidos
             // 
+            Pedidos.BackColor = Color.FromArgb(243, 241, 238);
+            Pedidos.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pedidos.FormattingEnabled = true;
-            Pedidos.ItemHeight = 15;
+            Pedidos.ItemHeight = 23;
             Pedidos.Location = new Point(33, 104);
             Pedidos.Name = "Pedidos";
-            Pedidos.Size = new Size(333, 454);
+            Pedidos.Size = new Size(408, 441);
             Pedidos.TabIndex = 0;
             Pedidos.SelectedIndexChanged += Pedidos_SelectedIndexChanged;
             // 
@@ -54,7 +57,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(124, 71);
+            label1.Location = new Point(170, 71);
             label1.Name = "label1";
             label1.Size = new Size(135, 30);
             label1.TabIndex = 1;
@@ -62,11 +65,13 @@
             // 
             // Preparando
             // 
+            Preparando.BackColor = Color.FromArgb(243, 241, 238);
+            Preparando.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Preparando.FormattingEnabled = true;
-            Preparando.ItemHeight = 15;
-            Preparando.Location = new Point(399, 104);
+            Preparando.ItemHeight = 23;
+            Preparando.Location = new Point(469, 104);
             Preparando.Name = "Preparando";
-            Preparando.Size = new Size(507, 244);
+            Preparando.Size = new Size(433, 234);
             Preparando.TabIndex = 2;
             Preparando.SelectedIndexChanged += Preparando_SelectedIndexChanged;
             // 
@@ -74,7 +79,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(570, 71);
+            label2.Location = new Point(602, 71);
             label2.Name = "label2";
             label2.Size = new Size(166, 30);
             label2.TabIndex = 3;
@@ -96,20 +101,21 @@
             button1.BackColor = Color.FromArgb(243, 241, 238);
             button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(556, 364);
+            button1.Location = new Point(593, 362);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(188, 50);
             button1.TabIndex = 7;
             button1.Text = "Cancelar Pedido";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(243, 241, 238);
             button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(556, 436);
+            button2.Location = new Point(593, 429);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(188, 50);
@@ -122,7 +128,7 @@
             button3.BackColor = Color.FromArgb(230, 255, 0);
             button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlText;
-            button3.Location = new Point(556, 508);
+            button3.Location = new Point(593, 495);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(188, 50);
@@ -130,12 +136,24 @@
             button3.Text = "Finalizar Pedido";
             button3.UseVisualStyleBackColor = false;
             // 
+            // button4
+            // 
+            button4.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Location = new Point(33, 569);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 10;
+            button4.Text = "↩️";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
-            ClientSize = new Size(930, 592);
+            ClientSize = new Size(930, 604);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -146,6 +164,7 @@
             Controls.Add(Pedidos);
             Name = "Form4";
             Text = "Tela da Cozinha";
+            Load += Form4_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -161,5 +180,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button4;
     }
 }

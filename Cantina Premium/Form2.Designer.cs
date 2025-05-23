@@ -42,6 +42,7 @@
             textBox1 = new TextBox();
             label4 = new Label();
             button4 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -52,10 +53,10 @@
             Cardapio.Font = new Font("Consolas", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Cardapio.FormattingEnabled = true;
             Cardapio.ItemHeight = 28;
-            Cardapio.Location = new Point(14, 132);
+            Cardapio.Location = new Point(33, 132);
             Cardapio.Margin = new Padding(3, 4, 3, 4);
             Cardapio.Name = "Cardapio";
-            Cardapio.Size = new Size(608, 424);
+            Cardapio.Size = new Size(589, 452);
             Cardapio.TabIndex = 0;
             Cardapio.SelectedIndexChanged += Cardapio_SelectedIndexChanged;
             // 
@@ -128,7 +129,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 98);
+            label1.Location = new Point(33, 98);
             label1.Name = "label1";
             label1.Size = new Size(139, 30);
             label1.TabIndex = 6;
@@ -198,12 +199,24 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(32, 625);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 13;
+            button5.Text = "↩️";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(1028, 660);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label4);
             Controls.Add(textBox1);
@@ -244,5 +257,6 @@
         private TextBox textBox1;
         private Label label4;
         private Button button4;
+        private Button button5;
     }
 }

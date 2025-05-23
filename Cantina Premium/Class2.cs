@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Cantina_Premium
 {
-    internal class PreparoPedidos
+    internal class Pedido
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Pedido { get; set; }
-        public int Quantidade { get; set; } = 0;
+        public string NomeCliente { get; set; }
+        public List<Cardapio> Itens { get; set; }
+        public int Quantidade { get; set; }
+        public DateTime DataHora { get; set; }
     }
 }

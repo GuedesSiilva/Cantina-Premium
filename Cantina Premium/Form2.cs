@@ -158,6 +158,7 @@ namespace Cantina_Premium
             double somaFinal = 0;
             foreach (Cardapio item in Pedindo.Items)
             {
+
                 somaFinal += item.Preco;
             }
             if (Pedindo.Items.Count == 0)
@@ -198,6 +199,16 @@ namespace Cantina_Premium
 
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+                Pedido novoPedido = new Pedido
+                {
+                    Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
+                    NomeCliente = textBox1.Text,
+                    Itens = Pedindo.Items.Cast<Cardapio>().Select(item => new Cardapio(item.Nome, item.Preco, item.Quantidade)).ToList(),
+                    DataHora = DateTime.Now
+                };
+
+                PreparoPedidos.Instancia.Pedidos.Add(novoPedido);
                 textBox1.Clear();
                 Pedindo.Items.Clear();
                 label3.Text = "R$ 0,00";
@@ -232,6 +243,13 @@ namespace Cantina_Premium
         private void Form2_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show(); 
+            this.Hide();
         }
     }
 }
