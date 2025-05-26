@@ -176,6 +176,7 @@
             Viagem.TabStop = true;
             Viagem.Text = "✈️ Viagem";
             Viagem.UseVisualStyleBackColor = true;
+            Viagem.CheckedChanged += Viagem_CheckedChanged;
             // 
             // groupBox2
             // 

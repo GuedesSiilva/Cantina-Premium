@@ -38,6 +38,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            Historico = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -101,7 +102,7 @@
             button1.BackColor = Color.FromArgb(243, 241, 238);
             button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(593, 362);
+            button1.Location = new Point(469, 483);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(188, 50);
@@ -115,20 +116,21 @@
             button2.BackColor = Color.FromArgb(243, 241, 238);
             button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(593, 429);
+            button2.Location = new Point(714, 483);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(188, 50);
             button2.TabIndex = 8;
             button2.Text = "Preparar pedido";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(230, 255, 0);
             button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlText;
-            button3.Location = new Point(593, 495);
+            button3.Location = new Point(589, 541);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(188, 50);
@@ -147,12 +149,25 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // Historico
+            // 
+            Historico.BackColor = Color.FromArgb(243, 241, 238);
+            Historico.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Historico.FormattingEnabled = true;
+            Historico.ItemHeight = 23;
+            Historico.Location = new Point(469, 352);
+            Historico.Name = "Historico";
+            Historico.Size = new Size(433, 119);
+            Historico.TabIndex = 11;
+            Historico.SelectedIndexChanged += Historico_SelectedIndexChanged;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(930, 604);
+            Controls.Add(Historico);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -181,5 +196,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private ListBox Historico;
     }
 }

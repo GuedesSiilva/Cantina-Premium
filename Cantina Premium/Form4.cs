@@ -19,7 +19,14 @@ namespace Cantina_Premium
 
         private void Pedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Preparando.Items.Clear();
+            if (Pedidos.SelectedItem is Pedido pedidoselecionado)
+            {
+                foreach (Cardapio item in pedidoselecionado.Itens.Where(vaipara => vaipara.Chapa))
+                {
+                    Preparando.Items.Add($"Item: {item.Nome} - Quantidade: {item.Quantidade}");
+                }
+            }
         }
 
         private void Preparando_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,14 +47,8 @@ namespace Cantina_Premium
 
             foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
             {
-                Pedidos.Items.Add($"Pedido #{pedido.Id} - Cliente: {pedido.NomeCliente} - {pedido.DataHora}");
-
-                foreach (var item in pedido.Itens)
-                {
-                    Pedidos.Items.Add($"  {item.Nome} - Quantidade: {item.Quantidade}");
-                }
-
-                Pedidos.Items.Add("");
+                Pedidos.Items.Add(pedido);
+                Pedidos.Items.Add(" ");
             }
         }
 
@@ -74,13 +75,13 @@ namespace Cantina_Premium
                 pedidoIndex++;
             }
 
-            if(pedidoIndex < PreparoPedidos.Instancia.Pedidos.Count)
+            if (pedidoIndex < PreparoPedidos.Instancia.Pedidos.Count)
             {
                 DialogResult resultado = MessageBox.Show("Deseja cancelar este pedido ? ", "Cancelamento", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (resultado == DialogResult.Yes)
                 {
-                   PreparoPedidos.Instancia.Pedidos.RemoveAt(pedidoIndex);
+                    PreparoPedidos.Instancia.Pedidos.RemoveAt(pedidoIndex);
                     MessageBox.Show("Pedido cancelado com sucesso", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Form4_Load(null, null);
                 }
@@ -93,7 +94,35 @@ namespace Cantina_Premium
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (Pedidos.SelectedItem == null)
+            {
+                MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (Pedidos.SelectedItem is Pedido pedidoSelecionado)
+            {
+                pedidoSelecionado.Status = "Preparando";
+                int idx = Pedidos.SelectedIndex;
+                Pedidos.Items[idx] = pedidoSelecionado;
+                if (Historico.Items.Contains(pedidoSelecionado))
+                {
+                    MessageBox.Show("Este pedido já está em preparo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Historico.Items.Add($"Pedido #{pedidoSelecionado.Id} - Cliente: {pedidoSelecionado.NomeCliente} - {pedidoSelecionado.Status}");
+                }
+            }
+        }
+
+        private void Historico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

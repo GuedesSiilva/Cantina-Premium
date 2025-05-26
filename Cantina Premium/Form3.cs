@@ -125,5 +125,10 @@ namespace Cantina_Premium
         {
 
         }
+
+        private void Viagem_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
