@@ -19,15 +19,15 @@ namespace Cantina_Premium
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            Form4 form4= new Form4();
+            form4.Show();
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
-            form4.Show();
+            Form6 form6 = new Form6();
+            form6.Show();
             this.Hide();
         }
 
@@ -39,6 +39,13 @@ namespace Cantina_Premium
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form2 form2= new Form2();
+            form2.Show();
+            this.Hide();
         }
     }
 }

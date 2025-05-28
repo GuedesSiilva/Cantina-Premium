@@ -34,12 +34,12 @@
             Preparando = new ListBox();
             label2 = new Label();
             pictureBox2 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             Historico = new ListBox();
             label3 = new Label();
+            button2 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -99,34 +99,6 @@
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(243, 241, 238);
-            button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(469, 483);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(188, 50);
-            button1.TabIndex = 7;
-            button1.Text = "Cancelar Pedido";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(243, 241, 238);
-            button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(714, 483);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(188, 50);
-            button2.TabIndex = 8;
-            button2.Text = "Preparar pedido";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_1;
-            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(230, 255, 0);
@@ -173,6 +145,34 @@
             label3.TabIndex = 12;
             label3.Text = "🕑 Histórico";
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(243, 241, 238);
+            button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ControlText;
+            button2.Location = new Point(714, 483);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(188, 50);
+            button2.TabIndex = 8;
+            button2.Text = "Preparar pedido";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(243, 241, 238);
+            button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlText;
+            button1.Location = new Point(469, 483);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(188, 50);
+            button1.TabIndex = 7;
+            button1.Text = "Cancelar Pedido";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -205,11 +205,11 @@
         private ListBox Preparando;
         private Label label2;
         private PictureBox pictureBox2;
-        private Button button1;
-        private Button button2;
         private Button button3;
         private Button button4;
         private ListBox Historico;
         private Label label3;
+        private Button button2;
+        private Button button1;
     }
 }

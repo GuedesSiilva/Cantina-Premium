@@ -35,6 +35,7 @@
             button1 = new Button();
             button2 = new Button();
             button4 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             button3.BackColor = Color.FromArgb(243, 241, 238);
             button3.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(220, 308);
+            button3.Location = new Point(220, 306);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(243, 97);
@@ -77,7 +78,7 @@
             // 
             button1.BackColor = Color.FromArgb(243, 241, 238);
             button1.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(563, 308);
+            button1.Location = new Point(563, 306);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(243, 97);
@@ -90,7 +91,7 @@
             // 
             button2.BackColor = Color.FromArgb(243, 241, 238);
             button2.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(220, 431);
+            button2.Location = new Point(220, 411);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(243, 97);
@@ -103,7 +104,7 @@
             // 
             button4.BackColor = Color.FromArgb(243, 241, 238);
             button4.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(563, 431);
+            button4.Location = new Point(563, 411);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
             button4.Size = new Size(243, 97);
@@ -111,12 +112,26 @@
             button4.Text = "💵 Administração";
             button4.UseVisualStyleBackColor = false;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(243, 241, 238);
+            button5.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(394, 516);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(243, 97);
+            button5.TabIndex = 16;
+            button5.Text = "\U0001f6d2 Tela de Vendas";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1028, 660);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -138,5 +153,6 @@
         private Button button1;
         private Button button2;
         private Button button4;
+        private Button button5;
     }
 }
