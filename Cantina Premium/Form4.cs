@@ -36,8 +36,8 @@ namespace Cantina_Premium
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            Form5 form5 = new Form5();
+            form5.Show();
             this.Hide();
         }
 
@@ -59,29 +59,14 @@ namespace Cantina_Premium
                 MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            int selectedIndex = Pedidos.SelectedIndex;
-            if (selectedIndex < 0)
-                return;
-
-            int pedidoIndex = 0;
-            int linha = 0;
-
-            foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
+            else
             {
-                if (linha == selectedIndex)
-                    break;
-                linha += 1 + pedido.Itens.Count + 1;
-                pedidoIndex++;
-            }
-
-            if (pedidoIndex < PreparoPedidos.Instancia.Pedidos.Count)
-            {
+                Pedido PedidoSelecionado = (Pedido)Pedidos.SelectedItem;
                 DialogResult resultado = MessageBox.Show("Deseja cancelar este pedido ? ", "Cancelamento", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    PreparoPedidos.Instancia.Pedidos.RemoveAt(pedidoIndex);
+                    PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
                     MessageBox.Show("Pedido cancelado com sucesso", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Form4_Load(null, null);
                 }
@@ -109,18 +94,24 @@ namespace Cantina_Premium
                 pedidoSelecionado.Status = "Preparando";
                 int idx = Pedidos.SelectedIndex;
                 Pedidos.Items[idx] = pedidoSelecionado;
-                if (Historico.Items.Contains(pedidoSelecionado))
+                string historicoTexto = $"Pedido #{pedidoSelecionado.Id} - Cliente: {pedidoSelecionado.NomeCliente} - {pedidoSelecionado.Status}";
+                if (Historico.Items.Contains(historicoTexto))
                 {
                     MessageBox.Show("Este pedido já está em preparo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    Historico.Items.Add($"Pedido #{pedidoSelecionado.Id} - Cliente: {pedidoSelecionado.NomeCliente} - {pedidoSelecionado.Status}");
+                    Historico.Items.Add(historicoTexto);
                 }
             }
         }
 
         private void Historico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

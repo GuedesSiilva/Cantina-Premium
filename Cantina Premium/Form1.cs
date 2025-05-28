@@ -78,5 +78,14 @@ namespace Cantina_Premium
             form2.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Deseja sair do serviço?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
     }
 }

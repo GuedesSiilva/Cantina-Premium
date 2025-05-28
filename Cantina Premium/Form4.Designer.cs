@@ -39,6 +39,7 @@
             button3 = new Button();
             button4 = new Button();
             Historico = new ListBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             Preparando.ItemHeight = 23;
             Preparando.Location = new Point(469, 104);
             Preparando.Name = "Preparando";
-            Preparando.Size = new Size(433, 234);
+            Preparando.Size = new Size(433, 188);
             Preparando.TabIndex = 2;
             Preparando.SelectedIndexChanged += Preparando_SelectedIndexChanged;
             // 
@@ -80,11 +81,12 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(602, 71);
+            label2.Location = new Point(618, 71);
             label2.Name = "label2";
-            label2.Size = new Size(166, 30);
+            label2.Size = new Size(145, 30);
             label2.TabIndex = 3;
-            label2.Text = "🕑 Preparando";
+            label2.Text = "📓 Comanda";
+            label2.Click += label2_Click;
             // 
             // pictureBox2
             // 
@@ -155,11 +157,21 @@
             Historico.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Historico.FormattingEnabled = true;
             Historico.ItemHeight = 23;
-            Historico.Location = new Point(469, 352);
+            Historico.Location = new Point(469, 329);
             Historico.Name = "Historico";
-            Historico.Size = new Size(433, 119);
+            Historico.Size = new Size(433, 142);
             Historico.TabIndex = 11;
             Historico.SelectedIndexChanged += Historico_SelectedIndexChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(618, 296);
+            label3.Name = "label3";
+            label3.Size = new Size(139, 30);
+            label3.TabIndex = 12;
+            label3.Text = "🕑 Histórico";
             // 
             // Form4
             // 
@@ -167,6 +179,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(930, 604);
+            Controls.Add(label3);
             Controls.Add(Historico);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -197,5 +210,6 @@
         private Button button3;
         private Button button4;
         private ListBox Historico;
+        private Label label3;
     }
 }

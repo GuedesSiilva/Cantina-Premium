@@ -35,8 +35,6 @@
             Senha = new TextBox();
             label2 = new Label();
             pictureBox2 = new PictureBox();
-            button3 = new Button();
-            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +42,7 @@
             // 
             button1.BackColor = Color.FromArgb(243, 241, 238);
             button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(268, 441);
+            button1.Location = new Point(268, 461);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(197, 67);
@@ -56,13 +54,14 @@
             // 
             button2.BackColor = Color.FromArgb(243, 241, 238);
             button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(544, 441);
+            button2.Location = new Point(545, 461);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(198, 67);
             button2.TabIndex = 5;
             button2.Text = "SAIR";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // User
             // 
@@ -97,7 +96,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(243, 241, 238);
             label2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(466, 245);
+            label2.Location = new Point(479, 246);
             label2.Name = "label2";
             label2.Size = new Size(59, 23);
             label2.TabIndex = 8;
@@ -115,40 +114,12 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(243, 241, 238);
-            button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(268, 536);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(197, 67);
-            button3.TabIndex = 10;
-            button3.Text = "Acesso a Cozinha";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(243, 241, 238);
-            button4.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(546, 536);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(197, 67);
-            button4.TabIndex = 11;
-            button4.Text = "Acesso ao Balcão";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1028, 660);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
             Controls.Add(Senha);
@@ -172,7 +143,5 @@
         private TextBox Senha;
         private Label label2;
         private PictureBox pictureBox2;
-        private Button button3;
-        private Button button4;
     }
 }
