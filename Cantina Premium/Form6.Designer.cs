@@ -74,6 +74,7 @@
             button3.TabIndex = 20;
             button3.Text = "📤 Entregar Pedido";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // pictureBox2
             // 
@@ -128,6 +129,7 @@
             ComandaBalcao.Name = "ComandaBalcao";
             ComandaBalcao.Size = new Size(433, 188);
             ComandaBalcao.TabIndex = 25;
+            ComandaBalcao.SelectedIndexChanged += ComandaBalcao_SelectedIndexChanged_1;
             // 
             // HistoricoBalcao
             // 

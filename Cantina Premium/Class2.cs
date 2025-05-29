@@ -14,9 +14,16 @@ namespace Cantina_Premium
         public int Quantidade { get; set; }
         public DateTime DataHora { get; set; }
         public string Status { get; set; } = "";
-    public override string ToString()
+        public string Tipo { get; set; } = "";
+
+        public Pedido(string Entrega)
         {
-            return $"Pedido #{Id} - Cliente: {NomeCliente} - {DataHora}";
+            Tipo = Entrega;
+        }
+
+        public override string ToString()
+        {
+            return $"Pedido #{Id} - Cliente: {NomeCliente} - {DataHora:HH:mm}";
         }
 
     }

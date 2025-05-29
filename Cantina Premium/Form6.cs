@@ -42,16 +42,63 @@ namespace Cantina_Premium
             {
                 PedidosBalcao.Items.Add(pedido);
             }
+            foreach (var hist in HistoricoGlobal.HistoricoPedidos)
+            {
+                HistoricoBalcao.Items.Add(hist);
+            }
         }
 
         private void PedidosBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            ComandaBalcao.Items.Clear();
+            if (PedidosBalcao.SelectedItem is Pedido pedidoselecionado)
+            {
+                foreach (Cardapio item in pedidoselecionado.Itens)
+                {
+                    ComandaBalcao.Items.Add($"{item.Nome} - Quantidade: {item.Quantidade} - {pedidoselecionado.Tipo}");
+                }
+            }
         }
 
         private void HistoricoBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
 
+        private void ComandaBalcao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComandaBalcao_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string PedidoPronto = (string)PedidosBalcao.SelectedItem;
+            PedidosBalcao.Items.Remove(PedidoPronto);
+
+            if (HistoricoBalcao.SelectedItem == null)
+            {
+                MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (HistoricoBalcao.SelectedItem is Pedido pedidoSelecionado)
+            {
+                pedidoSelecionado.Status = "Entregue";
+                int idx = PedidosBalcao.SelectedIndex;
+                PedidosBalcao.Items[idx] = pedidoSelecionado;
+                string historicoTexto = $"Pedido #{pedidoSelecionado.Id} - Cliente: {pedidoSelecionado.NomeCliente} - {pedidoSelecionado.Status}";
+                if (HistoricoBalcao.Items.Contains(historicoTexto))
+                {
+                    MessageBox.Show("Este pedido já foi entregue", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    HistoricoBalcao.Items.Add(historicoTexto);
+                }
+            }
         }
     }
 }

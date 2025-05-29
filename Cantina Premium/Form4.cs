@@ -47,8 +47,11 @@ namespace Cantina_Premium
 
             foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
             {
-                Pedidos.Items.Add(pedido);
-                Pedidos.Items.Add(" ");
+                if (pedido.Itens.Any(item => item.Chapa))
+                {
+                    Pedidos.Items.Add(pedido);
+                    Pedidos.Items.Add(" ");
+                }
             }
         }
 
@@ -114,6 +117,49 @@ namespace Cantina_Premium
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pedido PedidoSelecionado = (Pedido)Pedidos.SelectedItem;
+            DialogResult resultado = MessageBox.Show("Este pedido foi finalizado ? ", "Finalização", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (resultado == DialogResult.Yes)
+            {
+                PedidoSelecionado.Status = "Finalizado";
+                string historicoPreparando = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Preparando";
+                string historicoFinalizado = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Finalizado{PedidoSelecionado.Tipo}";
+                if (Historico.Items.Contains(historicoPreparando))
+                {
+                    Historico.Items.Remove(historicoPreparando);
+                }
+                else
+                {
+                    MessageBox.Show("Este pedido não está sendo preparado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!Historico.Items.Contains(historicoFinalizado))
+                {
+                    Historico.Items.Add(historicoFinalizado);
+
+                }
+                if (!HistoricoGlobal.HistoricoPedidos.Contains(historicoFinalizado))
+                {
+                    HistoricoGlobal.HistoricoPedidos.Add(historicoFinalizado);
+                }
+
+                Preparando.Items.Clear();
+                Pedidos.Items.Remove(PedidoSelecionado);
+                PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
+
+                MessageBox.Show("Pedido Finalizado com Sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                Form4_Load(null, null);
+            }
+            if (resultado == DialogResult.No)
+            {
+                MessageBox.Show("Pedido não finalizado", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -52,10 +52,12 @@ namespace Cantina_Premium
         {
 
         }
-        public string FormaSelecionada { get; private set; }
 
+        public string FormaSelecionada { get; private set; }
+        public string Entrega { get; private set; }
         private void button1_Click(object sender, EventArgs e)
         {
+
             if (Dinheiro.Checked)
                 FormaSelecionada = "Dinheiro";
             else if (Credito.Checked)
@@ -70,32 +72,12 @@ namespace Cantina_Premium
                 return;
             }
             if (Viagem.Checked)
-                FormaSelecionada += " - Viagem";
+                Entrega = " - Viagem";
             if (Consumo.Checked)
-                FormaSelecionada += " - Consumo";
+                Entrega = " - Consumo";
             this.DialogResult = DialogResult.OK;
             this.Close();
-            if (FormaSelecionada == "Dinheiro - Viagem")
-            {
-                while (true)
-                {
-                    string valorStr = Microsoft.VisualBasic.Interaction.InputBox("Digite o valor recebido:", "Dinheiro", "0");
-                    if (double.TryParse(valorStr, out double valorRecebido))
-                    {
-                        if (valorRecebido >= SomaFinal)
-                        {
-                            Troco = valorRecebido - SomaFinal;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Valor inválido. Por favor, insira novamente.");
-                    }
-                }
-            }
-
-            else if (FormaSelecionada == "Dinheiro - Consumo")
+            if (FormaSelecionada == "Dinheiro")
             {
                 while (true)
                 {

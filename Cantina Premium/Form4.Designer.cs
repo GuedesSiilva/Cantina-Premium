@@ -111,6 +111,7 @@
             button3.TabIndex = 9;
             button3.Text = "Finalizar Pedido";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 

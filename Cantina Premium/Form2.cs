@@ -178,7 +178,8 @@ namespace Cantina_Premium
             if (form3.ShowDialog() == DialogResult.OK)
             {
                 string forma = form3.FormaSelecionada;
-                MessageBox.Show("Forma de pagamento: " + forma);
+                string entrega = form3.Entrega;
+                MessageBox.Show("Forma de pagamento: " + forma + entrega);
             }
             string nomeCliente = textBox1.Text;
 
@@ -201,14 +202,15 @@ namespace Cantina_Premium
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                Pedido novoPedido = new Pedido
+                Pedido novoPedido = new (form3.Entrega)
                 {
                     Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
                     NomeCliente = textBox1.Text,
                     Itens = Pedindo.Items.Cast<Cardapio>()
                      .Select(item => new Cardapio(item.Nome, item.Preco, item.Quantidade, item.Chapa))
                      .ToList(),
-                    DataHora = DateTime.Now
+                    DataHora = DateTime.Now,
+                    Tipo = form3.Entrega,
                 };
 
                 PreparoPedidos.Instancia.Pedidos.Add(novoPedido);
