@@ -46,12 +46,12 @@
             // Pedidos
             // 
             Pedidos.BackColor = Color.FromArgb(243, 241, 238);
-            Pedidos.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pedidos.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pedidos.FormattingEnabled = true;
-            Pedidos.ItemHeight = 23;
+            Pedidos.ItemHeight = 18;
             Pedidos.Location = new Point(33, 104);
             Pedidos.Name = "Pedidos";
-            Pedidos.Size = new Size(408, 441);
+            Pedidos.Size = new Size(408, 436);
             Pedidos.TabIndex = 0;
             Pedidos.SelectedIndexChanged += Pedidos_SelectedIndexChanged;
             // 

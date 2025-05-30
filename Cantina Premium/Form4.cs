@@ -70,6 +70,7 @@ namespace Cantina_Premium
                 if (resultado == DialogResult.Yes)
                 {
                     PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
+                    Preparando.Items.Clear();
                     MessageBox.Show("Pedido cancelado com sucesso", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Form4_Load(null, null);
                 }
@@ -126,9 +127,9 @@ namespace Cantina_Premium
 
             if (resultado == DialogResult.Yes)
             {
-                PedidoSelecionado.Status = "Finalizado";
+                PedidoSelecionado.Status = "- Finalizado";
                 string historicoPreparando = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Preparando";
-                string historicoFinalizado = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Finalizado{PedidoSelecionado.Tipo}";
+                string historicoFinalizado = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Finalizado";
                 if (Historico.Items.Contains(historicoPreparando))
                 {
                     Historico.Items.Remove(historicoPreparando);
@@ -143,9 +144,9 @@ namespace Cantina_Premium
                     Historico.Items.Add(historicoFinalizado);
 
                 }
-                if (!HistoricoGlobal.HistoricoPedidos.Contains(historicoFinalizado))
+                if (!HistoricoGlobal.HistoricoPedidos.Contains(PedidoSelecionado))
                 {
-                    HistoricoGlobal.HistoricoPedidos.Add(historicoFinalizado);
+                    HistoricoGlobal.HistoricoPedidos.Add(PedidoSelecionado);
                 }
 
                 Preparando.Items.Clear();

@@ -152,7 +152,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter SemiBold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(777, 576);
+            label3.Location = new Point(778, 577);
             label3.Name = "label3";
             label3.Size = new Size(121, 39);
             label3.TabIndex = 8;

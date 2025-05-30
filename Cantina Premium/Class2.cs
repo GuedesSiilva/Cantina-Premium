@@ -23,7 +23,7 @@ namespace Cantina_Premium
 
         public override string ToString()
         {
-            return $"Pedido #{Id} - Cliente: {NomeCliente} - {DataHora:HH:mm}";
+            return $"Pedido #{Id} - Cliente: {NomeCliente} - {DataHora:HH:mm} {Tipo} {Status}";
         }
 
     }

@@ -67,7 +67,7 @@
             button3.BackColor = Color.FromArgb(230, 255, 0);
             button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ControlText;
-            button3.Location = new Point(469, 493);
+            button3.Location = new Point(469, 541);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(433, 50);
@@ -96,6 +96,7 @@
             label2.Size = new Size(145, 30);
             label2.TabIndex = 16;
             label2.Text = "📓 Comanda";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -110,36 +111,36 @@
             // PedidosBalcao
             // 
             PedidosBalcao.BackColor = Color.FromArgb(243, 241, 238);
-            PedidosBalcao.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PedidosBalcao.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PedidosBalcao.FormattingEnabled = true;
-            PedidosBalcao.ItemHeight = 23;
+            PedidosBalcao.ItemHeight = 18;
             PedidosBalcao.Location = new Point(33, 104);
             PedidosBalcao.Name = "PedidosBalcao";
-            PedidosBalcao.Size = new Size(406, 441);
+            PedidosBalcao.Size = new Size(406, 436);
             PedidosBalcao.TabIndex = 24;
             PedidosBalcao.SelectedIndexChanged += PedidosBalcao_SelectedIndexChanged;
             // 
             // ComandaBalcao
             // 
             ComandaBalcao.BackColor = Color.FromArgb(243, 241, 238);
-            ComandaBalcao.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ComandaBalcao.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ComandaBalcao.FormattingEnabled = true;
-            ComandaBalcao.ItemHeight = 23;
+            ComandaBalcao.ItemHeight = 22;
             ComandaBalcao.Location = new Point(469, 104);
             ComandaBalcao.Name = "ComandaBalcao";
-            ComandaBalcao.Size = new Size(433, 188);
+            ComandaBalcao.Size = new Size(433, 180);
             ComandaBalcao.TabIndex = 25;
             ComandaBalcao.SelectedIndexChanged += ComandaBalcao_SelectedIndexChanged_1;
             // 
             // HistoricoBalcao
             // 
             HistoricoBalcao.BackColor = Color.FromArgb(243, 241, 238);
-            HistoricoBalcao.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HistoricoBalcao.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             HistoricoBalcao.FormattingEnabled = true;
-            HistoricoBalcao.ItemHeight = 23;
+            HistoricoBalcao.ItemHeight = 22;
             HistoricoBalcao.Location = new Point(469, 329);
             HistoricoBalcao.Name = "HistoricoBalcao";
-            HistoricoBalcao.Size = new Size(433, 142);
+            HistoricoBalcao.Size = new Size(433, 202);
             HistoricoBalcao.TabIndex = 26;
             HistoricoBalcao.SelectedIndexChanged += HistoricoBalcao_SelectedIndexChanged;
             // 

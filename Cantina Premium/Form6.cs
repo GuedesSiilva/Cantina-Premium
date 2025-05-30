@@ -38,13 +38,12 @@ namespace Cantina_Premium
         private void Form6_Load(object sender, EventArgs e)
         {
             PedidosBalcao.Items.Clear();
-            foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
+            foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
             {
-                PedidosBalcao.Items.Add(pedido);
-            }
-            foreach (var hist in HistoricoGlobal.HistoricoPedidos)
-            {
-                HistoricoBalcao.Items.Add(hist);
+                if (pedido.Status == "- Finalizado")
+                {
+                    PedidosBalcao.Items.Add(pedido);
+                }
             }
         }
 
@@ -55,7 +54,7 @@ namespace Cantina_Premium
             {
                 foreach (Cardapio item in pedidoselecionado.Itens)
                 {
-                    ComandaBalcao.Items.Add($"{item.Nome} - Quantidade: {item.Quantidade} - {pedidoselecionado.Tipo}");
+                    ComandaBalcao.Items.Add($"{item.Nome} - Quantidade: {item.Quantidade} {pedidoselecionado.Tipo}");
                 }
             }
         }
@@ -76,29 +75,26 @@ namespace Cantina_Premium
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string PedidoPronto = (string)PedidosBalcao.SelectedItem;
-            PedidosBalcao.Items.Remove(PedidoPronto);
+            if (PedidosBalcao.SelectedItem is Pedido pedidoSelecionado)
+            {
+                DialogResult resultado = MessageBox.Show("Este pedido está pronto para entrega? ", "Entrega", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-            if (HistoricoBalcao.SelectedItem == null)
-            {
-                MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (HistoricoBalcao.SelectedItem is Pedido pedidoSelecionado)
-            {
-                pedidoSelecionado.Status = "Entregue";
-                int idx = PedidosBalcao.SelectedIndex;
-                PedidosBalcao.Items[idx] = pedidoSelecionado;
-                string historicoTexto = $"Pedido #{pedidoSelecionado.Id} - Cliente: {pedidoSelecionado.NomeCliente} - {pedidoSelecionado.Status}";
-                if (HistoricoBalcao.Items.Contains(historicoTexto))
+                if (resultado == DialogResult.Yes)
                 {
-                    MessageBox.Show("Este pedido já foi entregue", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    HistoricoBalcao.Items.Add(historicoTexto);
+                    pedidoSelecionado.Status = "- Entregue";
+                    PedidosBalcao.Items[PedidosBalcao.SelectedIndex] = pedidoSelecionado;
+                    PreparoPedidos.Instancia.Pedidos.Remove(pedidoSelecionado);
+                    PedidosBalcao.Items.Remove(pedidoSelecionado);
+                    ComandaBalcao.Items.Clear();
+                    HistoricoGlobal.HistoricoPedidos.Add(pedidoSelecionado);
+                    HistoricoBalcao.Items.Add(pedidoSelecionado);
                 }
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

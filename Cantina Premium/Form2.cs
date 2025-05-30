@@ -214,6 +214,11 @@ namespace Cantina_Premium
                 };
 
                 PreparoPedidos.Instancia.Pedidos.Add(novoPedido);
+                if (!novoPedido.Itens.Any(item => item.Chapa))
+                {
+                    novoPedido.Status = "- Finalizado";
+                    HistoricoGlobal.HistoricoPedidos.Add(novoPedido);
+                }
                 textBox1.Clear();
                 Pedindo.Items.Clear();
                 somaFinal = 0;

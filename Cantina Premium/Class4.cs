@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cantina_Premium;
 
 public static class HistoricoGlobal
 {
-    public static List<string> HistoricoPedidos = new List<string>();
+    internal static List<Pedido> HistoricoPedidos = new List<Pedido>();
 }
