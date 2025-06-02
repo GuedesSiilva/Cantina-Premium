@@ -36,14 +36,14 @@
             groupBox1 = new GroupBox();
             button1 = new Button();
             pix = new RadioButton();
-            label2 = new Label();
             Consumo = new RadioButton();
+            label2 = new Label();
             Viagem = new RadioButton();
-            groupBox2 = new GroupBox();
             pictureBox1 = new PictureBox();
+            groupBox2 = new GroupBox();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // Dinheiro
@@ -76,15 +76,18 @@
             // Debito
             // 
             Debito.AutoSize = true;
+            Debito.BackColor = Color.FromArgb(202, 196, 183);
             Debito.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Debito.ForeColor = SystemColors.ControlText;
             Debito.Location = new Point(23, 76);
+            Debito.Margin = new Padding(5);
             Debito.Name = "Debito";
             Debito.Size = new Size(131, 34);
             Debito.TabIndex = 5;
             Debito.TabStop = true;
             Debito.Text = "💳 Débito";
-            Debito.UseVisualStyleBackColor = true;
+            Debito.TextAlign = ContentAlignment.TopCenter;
+            Debito.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -129,6 +132,7 @@
             // pix
             // 
             pix.AutoSize = true;
+            pix.BackColor = Color.FromArgb(202, 196, 183);
             pix.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pix.ForeColor = SystemColors.ControlText;
             pix.Location = new Point(23, 129);
@@ -137,19 +141,8 @@
             pix.TabIndex = 7;
             pix.TabStop = true;
             pix.Text = "❖ Pix";
-            pix.UseVisualStyleBackColor = true;
+            pix.UseVisualStyleBackColor = false;
             pix.CheckedChanged += pix_CheckedChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(30, 34);
-            label2.Name = "label2";
-            label2.Size = new Size(288, 27);
-            label2.TabIndex = 9;
-            label2.Text = "Selecione a forma de entrega:";
             // 
             // Consumo
             // 
@@ -164,6 +157,17 @@
             Consumo.Text = "😋 Consumo imediato";
             Consumo.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlText;
+            label2.Location = new Point(30, 34);
+            label2.Name = "label2";
+            label2.Size = new Size(288, 27);
+            label2.TabIndex = 9;
+            label2.Text = "Selecione a forma de entrega:";
+            // 
             // Viagem
             // 
             Viagem.AutoSize = true;
@@ -177,6 +181,16 @@
             Viagem.Text = "✈️ Viagem";
             Viagem.UseVisualStyleBackColor = true;
             Viagem.CheckedChanged += Viagem_CheckedChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(168, 277);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(184, 72);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -193,16 +207,6 @@
             groupBox2.Text = "groupBox2";
             groupBox2.Enter += groupBox2_Enter;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(168, 277);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(184, 72);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -217,9 +221,9 @@
             Load += Form3_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
