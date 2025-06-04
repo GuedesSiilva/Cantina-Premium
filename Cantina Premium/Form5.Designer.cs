@@ -36,6 +36,7 @@
             button2 = new Button();
             button4 = new Button();
             button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -116,7 +117,7 @@
             // 
             button5.BackColor = Color.FromArgb(243, 241, 238);
             button5.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(394, 516);
+            button5.Location = new Point(220, 516);
             button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
             button5.Size = new Size(243, 97);
@@ -125,12 +126,26 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(243, 241, 238);
+            button6.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Location = new Point(563, 516);
+            button6.Margin = new Padding(3, 4, 3, 4);
+            button6.Name = "button6";
+            button6.Size = new Size(243, 97);
+            button6.TabIndex = 17;
+            button6.Text = "🖥️ Telão de Pedidos";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1028, 660);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button2);
@@ -154,5 +169,6 @@
         private Button button2;
         private Button button4;
         private Button button5;
+        private Button button6;
     }
 }

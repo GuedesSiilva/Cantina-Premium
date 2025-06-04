@@ -45,11 +45,12 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(618, 296);
+            label3.Location = new Point(618, 305);
             label3.Name = "label3";
             label3.Size = new Size(139, 30);
             label3.TabIndex = 23;
             label3.Text = "🕑 Histórico";
+            label3.Click += label3_Click;
             // 
             // button4
             // 
@@ -102,7 +103,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(170, 71);
+            label1.Location = new Point(168, 71);
             label1.Name = "label1";
             label1.Size = new Size(135, 30);
             label1.TabIndex = 14;
@@ -138,7 +139,7 @@
             HistoricoBalcao.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             HistoricoBalcao.FormattingEnabled = true;
             HistoricoBalcao.ItemHeight = 22;
-            HistoricoBalcao.Location = new Point(469, 329);
+            HistoricoBalcao.Location = new Point(469, 338);
             HistoricoBalcao.Name = "HistoricoBalcao";
             HistoricoBalcao.Size = new Size(433, 202);
             HistoricoBalcao.TabIndex = 26;

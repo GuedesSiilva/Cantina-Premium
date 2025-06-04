@@ -144,10 +144,11 @@ namespace Cantina_Premium
                     Historico.Items.Add(historicoFinalizado);
 
                 }
-                if (!HistoricoGlobal.HistoricoPedidos.Contains(PedidoSelecionado))
+                if (!HistoricoGlobal.HistoricoPedidos.Any(p => p.Id == PedidoSelecionado.Id))
                 {
                     HistoricoGlobal.HistoricoPedidos.Add(PedidoSelecionado);
                 }
+
 
                 Preparando.Items.Clear();
                 Pedidos.Items.Remove(PedidoSelecionado);

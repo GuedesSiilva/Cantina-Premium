@@ -40,3 +40,5 @@ C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-wi
 C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form4.resources
 C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form5.resources
 C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form6.resources
+C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form7.resources
+C:\Users\25163231\codigos\VS\Cantina Premium\Cantina Premium\obj\Debug\net8.0-windows\Cantina_Premium.Form8.resources

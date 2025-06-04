@@ -29,16 +29,22 @@ namespace Cantina_Premium
         }
         public void Form2_Load(object sender, EventArgs e)
         {
-            Cardapio.Items.Add(new Cardapio("Pão de Queijo", 3.50, 0,false));
-            Cardapio.Items.Add(new Cardapio("Coxinha", 5.00, 0,false));
-            Cardapio.Items.Add(new Cardapio("Pastel de Carne", 6.00, 0, true));
-            Cardapio.Items.Add(new Cardapio("Pastel de Queijo", 5.50, 0, true));
-            Cardapio.Items.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0, false));
-            Cardapio.Items.Add(new Cardapio("Refrigerante Lata", 4.50, 0, false));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer Simples", 8.00, 0,true));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer com Queijo", 9.00, 0,true));
-            Cardapio.Items.Add(new Cardapio("X-Tudo", 12.00, 0, true));
-            Cardapio.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0,false));
+
+            Estoque.Itens.Add(new Cardapio("Pão de Queijo", 3.50, 0, false));
+            Estoque.Itens.Add(new Cardapio("Coxinha", 5.00, 0, false));
+            Estoque.Itens.Add(new Cardapio("Pastel de Carne", 6.00, 0, true));
+            Estoque.Itens.Add(new Cardapio("Pastel de Queijo", 5.50, 0, true));
+            Estoque.Itens.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0, false));
+            Estoque.Itens.Add(new Cardapio("Refrigerante Lata", 4.50, 0, false));
+            Estoque.Itens.Add(new Cardapio("Hambúrguer Simples", 8.00, 0, true));
+            Estoque.Itens.Add(new Cardapio("Hambúrguer com Queijo", 9.00, 0, true));
+            Estoque.Itens.Add(new Cardapio("X-Tudo", 12.00, 0, true));
+            Estoque.Itens.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0, false));
+
+            foreach (var item in Estoque.Itens)
+            {
+                Cardapio.Items.Add(item);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

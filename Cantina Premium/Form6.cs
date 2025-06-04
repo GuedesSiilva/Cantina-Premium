@@ -86,13 +86,17 @@ namespace Cantina_Premium
                     PreparoPedidos.Instancia.Pedidos.Remove(pedidoSelecionado);
                     PedidosBalcao.Items.Remove(pedidoSelecionado);
                     ComandaBalcao.Items.Clear();
-                    HistoricoGlobal.HistoricoPedidos.Add(pedidoSelecionado);
                     HistoricoBalcao.Items.Add(pedidoSelecionado);
                 }
             }
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
