@@ -29,7 +29,7 @@ namespace Cantina_Premium
 
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            listBox3.ClearSelected();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -71,12 +71,12 @@ namespace Cantina_Premium
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            listBox1.ClearSelected();
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            listBox2.ClearSelected();
         }
     }
 }

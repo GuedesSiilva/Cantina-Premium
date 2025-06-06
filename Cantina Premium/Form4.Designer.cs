@@ -46,6 +46,7 @@
             // Pedidos
             // 
             Pedidos.BackColor = Color.FromArgb(243, 241, 238);
+            Pedidos.DrawMode = DrawMode.OwnerDrawFixed;
             Pedidos.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pedidos.FormattingEnabled = true;
             Pedidos.ItemHeight = 18;
@@ -53,6 +54,7 @@
             Pedidos.Name = "Pedidos";
             Pedidos.Size = new Size(408, 436);
             Pedidos.TabIndex = 0;
+            Pedidos.DrawItem += Pedidos_DrawItem;
             Pedidos.SelectedIndexChanged += Pedidos_SelectedIndexChanged;
             // 
             // label1
@@ -68,6 +70,7 @@
             // Preparando
             // 
             Preparando.BackColor = Color.FromArgb(243, 241, 238);
+            Preparando.DrawMode = DrawMode.OwnerDrawFixed;
             Preparando.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Preparando.FormattingEnabled = true;
             Preparando.ItemHeight = 23;
@@ -75,6 +78,7 @@
             Preparando.Name = "Preparando";
             Preparando.Size = new Size(433, 188);
             Preparando.TabIndex = 2;
+            Preparando.DrawItem += Preparando_DrawItem;
             Preparando.SelectedIndexChanged += Preparando_SelectedIndexChanged;
             // 
             // label2
@@ -127,6 +131,7 @@
             // Historico
             // 
             Historico.BackColor = Color.FromArgb(243, 241, 238);
+            Historico.DrawMode = DrawMode.OwnerDrawFixed;
             Historico.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Historico.FormattingEnabled = true;
             Historico.ItemHeight = 23;
@@ -134,6 +139,7 @@
             Historico.Name = "Historico";
             Historico.Size = new Size(433, 142);
             Historico.TabIndex = 11;
+            Historico.DrawItem += Historico_DrawItem;
             Historico.SelectedIndexChanged += Historico_SelectedIndexChanged;
             // 
             // label3

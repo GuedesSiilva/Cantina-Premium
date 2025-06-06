@@ -50,6 +50,7 @@
             // Cardapio
             // 
             Cardapio.BackColor = Color.FromArgb(243, 241, 238);
+            Cardapio.DrawMode = DrawMode.OwnerDrawFixed;
             Cardapio.Font = new Font("Consolas", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Cardapio.FormattingEnabled = true;
             Cardapio.ItemHeight = 28;
@@ -58,6 +59,7 @@
             Cardapio.Name = "Cardapio";
             Cardapio.Size = new Size(589, 452);
             Cardapio.TabIndex = 0;
+            Cardapio.DrawItem += Cardapio_DrawItem;
             Cardapio.SelectedIndexChanged += Cardapio_SelectedIndexChanged;
             // 
             // button1
@@ -77,6 +79,7 @@
             // Pedindo
             // 
             Pedindo.BackColor = Color.FromArgb(243, 241, 238);
+            Pedindo.DrawMode = DrawMode.OwnerDrawFixed;
             Pedindo.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Pedindo.FormattingEnabled = true;
             Pedindo.ItemHeight = 18;
@@ -85,6 +88,7 @@
             Pedindo.Name = "Pedindo";
             Pedindo.Size = new Size(370, 274);
             Pedindo.TabIndex = 2;
+            Pedindo.DrawItem += Pedindo_DrawItem;
             Pedindo.SelectedIndexChanged += Pedindo_SelectedIndexChanged;
             // 
             // button2

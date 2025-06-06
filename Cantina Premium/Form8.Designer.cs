@@ -81,6 +81,7 @@
             button5.TabIndex = 15;
             button5.Text = "↩️";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // Remove
             // 
@@ -102,6 +103,7 @@
             Quant.TabIndex = 17;
             Quant.Text = "🔂 Alterar Quantidade";
             Quant.UseVisualStyleBackColor = true;
+            Quant.Click += Quant_Click;
             // 
             // EditItem
             // 
@@ -112,6 +114,7 @@
             EditItem.TabIndex = 18;
             EditItem.Text = "✏️ Editar Item";
             EditItem.UseVisualStyleBackColor = true;
+            EditItem.Click += EditItem_Click;
             // 
             // listEstoque
             // 

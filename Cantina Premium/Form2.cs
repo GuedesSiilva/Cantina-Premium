@@ -29,18 +29,20 @@ namespace Cantina_Premium
         }
         public void Form2_Load(object sender, EventArgs e)
         {
-
-            Estoque.Itens.Add(new Cardapio("Pão de Queijo", 3.50, 0, false));
-            Estoque.Itens.Add(new Cardapio("Coxinha", 5.00, 0, false));
-            Estoque.Itens.Add(new Cardapio("Pastel de Carne", 6.00, 0, true));
-            Estoque.Itens.Add(new Cardapio("Pastel de Queijo", 5.50, 0, true));
-            Estoque.Itens.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0, false));
-            Estoque.Itens.Add(new Cardapio("Refrigerante Lata", 4.50, 0, false));
-            Estoque.Itens.Add(new Cardapio("Hambúrguer Simples", 8.00, 0, true));
-            Estoque.Itens.Add(new Cardapio("Hambúrguer com Queijo", 9.00, 0, true));
-            Estoque.Itens.Add(new Cardapio("X-Tudo", 12.00, 0, true));
-            Estoque.Itens.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0, false));
-
+            if (Estoque.Itens.Count == 0)
+            {
+                Estoque.Itens.Add(new Cardapio("Pão de Queijo", 3.50, 10, false));
+                Estoque.Itens.Add(new Cardapio("Coxinha", 5.00, 10, false));
+                Estoque.Itens.Add(new Cardapio("Pastel de Carne", 6.00, 10, true));
+                Estoque.Itens.Add(new Cardapio("Pastel de Queijo", 5.50, 10, true));
+                Estoque.Itens.Add(new Cardapio("Suco Natural (300ml)", 4.00, 10, false));
+                Estoque.Itens.Add(new Cardapio("Refrigerante Lata", 4.50, 10, false));
+                Estoque.Itens.Add(new Cardapio("Hambúrguer Simples", 8.00, 10, true));
+                Estoque.Itens.Add(new Cardapio("Hambúrguer com Queijo", 9.00, 10, true));
+                Estoque.Itens.Add(new Cardapio("X-Tudo", 12.00, 10, true));
+                Estoque.Itens.Add(new Cardapio("Água Mineral (500ml)", 2.50, 10, false));
+            }
+            Cardapio.Items.Clear();
             foreach (var item in Estoque.Itens)
             {
                 Cardapio.Items.Add(item);
@@ -65,19 +67,43 @@ namespace Cantina_Premium
         private void label2_Click(object sender, EventArgs e)
         {
 
+        } private void AtualizarCardapioListBox()
+        {
+            int selectedIndex = Cardapio.SelectedIndex;
+
+            // Desabilita o redraw para evitar flicker e lentidão
+            Cardapio.BeginUpdate();
+            Cardapio.Items.Clear();
+            foreach (var item in Estoque.Itens)
+            {
+                Cardapio.Items.Add(item);
+            }
+            Cardapio.EndUpdate();
+
+            // Restaura a seleção anterior, se possível
+            if (selectedIndex >= 0 && selectedIndex < Cardapio.Items.Count)
+                Cardapio.SelectedIndex = selectedIndex;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (Cardapio.SelectedItem is Cardapio produtoSelecionado)
             {
-                bool encontrado = false;
+                if (produtoSelecionado.Quantidade <= 0)
+                {
+                    MessageBox.Show("Estoque insuficiente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (produtoSelecionado.Quantidade < 5)
+                { 
+                    MessageBox.Show("Estoque baixo! Apenas " + produtoSelecionado.Quantidade + " unidades restantes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                    bool encontrado = false;
                 foreach (Cardapio item in Pedindo.Items)
                 {
                     if (item.Nome == produtoSelecionado.Nome)
                     {
                         item.Quantidade++;
-                        item.Preco += produtoSelecionado.Preco;
                         encontrado = true;
 
                         int index = Pedindo.Items.IndexOf(item);
@@ -89,14 +115,18 @@ namespace Cantina_Premium
                 }
                 if (!encontrado)
                 {
-                    Cardapio novoItem = new Cardapio(produtoSelecionado.Nome, produtoSelecionado.Preco, 1,produtoSelecionado.Chapa);
+                    Cardapio novoItem = new Cardapio(produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
                     Pedindo.Items.Add(novoItem);
                 }
+
+                produtoSelecionado.Quantidade--;
+                AtualizarCardapioListBox();
+                Cardapio.Focus();
 
                 double somaTotal = 0;
                 foreach (Cardapio item in Pedindo.Items)
                 {
-                    somaTotal += item.Preco;
+                    somaTotal += item.Preco * item.Quantidade;
                 }
                 label3.Text = "R$ " + somaTotal.ToString("F2");
             }
@@ -114,49 +144,44 @@ namespace Cantina_Premium
         private void button2_Click(object sender, EventArgs e)
         {
             //remover items
-            if (Cardapio.SelectedItem is Cardapio produtoSelecionado)
+            if (Pedindo.SelectedItem is Cardapio produtoSelecionado)
             {
-                bool encontrado = false;
                 foreach (Cardapio item in Pedindo.Items)
                 {
                     if (item.Nome == produtoSelecionado.Nome)
                     {
+                        var estoqueItem = Estoque.Itens.FirstOrDefault(x => x.Nome == item.Nome);
+                        if (estoqueItem != null)
+                            estoqueItem.Quantidade++;
+
                         item.Quantidade--;
-                        item.Preco -= produtoSelecionado.Preco;
-                        encontrado = true;
 
                         if (item.Quantidade == 0)
                         {
+                            if (estoqueItem != null)
+                                estoqueItem.Quantidade += Math.Max(0, item.Quantidade);
                             Pedindo.Items.Remove(item);
                         }
                         else
-                        {
-                            int index = Pedindo.Items.IndexOf(item);
-                            Pedindo.Items.RemoveAt(index);
-                            Pedindo.Items.Insert(index, item);
+                            {
+                                int index = Pedindo.Items.IndexOf(item);
+                                Pedindo.Items.RemoveAt(index);
+                                Pedindo.Items.Insert(index, item);
+                            }
+                            break;
                         }
-
-                        break;
-                    }
                 }
-
+                 AtualizarCardapioListBox();
                 double somaTotal = 0;
                 foreach (Cardapio item in Pedindo.Items)
                 {
-                    somaTotal += item.Preco;
+                    somaTotal += item.Preco * item.Quantidade;
                 }
-                if (somaTotal == 0)
-                {
-                    label3.Text = "R$ 0,00";
-                }
-                else
-                {
-                    label3.Text = "R$ " + somaTotal.ToString("F2");
-                }
+                label3.Text = somaTotal == 0 ? "R$ 0,00" : "R$ " + somaTotal.ToString("F2");
             }
             else
             {
-                MessageBox.Show("Por favor, selecione um item válido do cardápio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, selecione um item válido do pedido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void button3_Click(object sender, EventArgs e)
@@ -208,7 +233,7 @@ namespace Cantina_Premium
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                Pedido novoPedido = new (form3.Entrega)
+                Pedido novoPedido = new(form3.Entrega)
                 {
                     Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
                     NomeCliente = textBox1.Text,
@@ -253,8 +278,18 @@ namespace Cantina_Premium
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Pedindo.Items.Clear();
-            label3.Text = "R$ 0,00";
+            var itensParaDevolver = Pedindo.Items.Cast<Cardapio>().ToList();
+
+            foreach (Cardapio item in itensParaDevolver)
+            {
+                var estoqueItem = Estoque.Itens.FirstOrDefault(x => x.Nome == item.Nome);
+                if (estoqueItem != null)
+                    estoqueItem.Quantidade += item.Quantidade;  
+            }
+
+            Pedindo.Items.Clear(); 
+            AtualizarCardapioListBox(); 
+            label3.Text = "R$ 0,00"; 
         }
 
         private void Form2_Load_1(object sender, EventArgs e)
@@ -265,8 +300,58 @@ namespace Cantina_Premium
         private void button5_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
-            form5.Show(); 
+            form5.Show();
             this.Hide();
+        }
+
+        private void Cardapio_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void Pedindo_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
         }
     }
 }

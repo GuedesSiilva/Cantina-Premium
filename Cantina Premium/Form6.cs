@@ -58,7 +58,6 @@ namespace Cantina_Premium
                 }
             }
         }
-
         private void HistoricoBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -99,6 +98,81 @@ namespace Cantina_Premium
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PedidosBalcao_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void ComandaBalcao_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void HistoricoBalcao_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
         }
     }
 }

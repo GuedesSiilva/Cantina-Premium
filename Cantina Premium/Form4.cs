@@ -29,6 +29,7 @@ namespace Cantina_Premium
             }
         }
 
+
         private void Preparando_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -155,13 +156,88 @@ namespace Cantina_Premium
                 PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
 
                 MessageBox.Show("Pedido Finalizado com Sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
                 Form4_Load(null, null);
             }
             if (resultado == DialogResult.No)
             {
                 MessageBox.Show("Pedido não finalizado", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void Pedidos_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void Historico_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void Preparando_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox listBox = (ListBox)sender;
+            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+            // Cor de fundo personalizada
+            Color backColor = selected ? Color.LightGray : listBox.BackColor;
+            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Cor do texto
+            Color textColor = selected ? Color.Black : listBox.ForeColor;
+            using (SolidBrush textBrush = new SolidBrush(textColor))
+            {
+                string text = listBox.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
         }
     }
 }

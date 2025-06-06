@@ -112,6 +112,7 @@
             // PedidosBalcao
             // 
             PedidosBalcao.BackColor = Color.FromArgb(243, 241, 238);
+            PedidosBalcao.DrawMode = DrawMode.OwnerDrawFixed;
             PedidosBalcao.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PedidosBalcao.FormattingEnabled = true;
             PedidosBalcao.ItemHeight = 18;
@@ -119,11 +120,13 @@
             PedidosBalcao.Name = "PedidosBalcao";
             PedidosBalcao.Size = new Size(406, 436);
             PedidosBalcao.TabIndex = 24;
+            PedidosBalcao.DrawItem += PedidosBalcao_DrawItem;
             PedidosBalcao.SelectedIndexChanged += PedidosBalcao_SelectedIndexChanged;
             // 
             // ComandaBalcao
             // 
             ComandaBalcao.BackColor = Color.FromArgb(243, 241, 238);
+            ComandaBalcao.DrawMode = DrawMode.OwnerDrawFixed;
             ComandaBalcao.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ComandaBalcao.FormattingEnabled = true;
             ComandaBalcao.ItemHeight = 22;
@@ -131,11 +134,13 @@
             ComandaBalcao.Name = "ComandaBalcao";
             ComandaBalcao.Size = new Size(433, 180);
             ComandaBalcao.TabIndex = 25;
+            ComandaBalcao.DrawItem += ComandaBalcao_DrawItem;
             ComandaBalcao.SelectedIndexChanged += ComandaBalcao_SelectedIndexChanged_1;
             // 
             // HistoricoBalcao
             // 
             HistoricoBalcao.BackColor = Color.FromArgb(243, 241, 238);
+            HistoricoBalcao.DrawMode = DrawMode.OwnerDrawFixed;
             HistoricoBalcao.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             HistoricoBalcao.FormattingEnabled = true;
             HistoricoBalcao.ItemHeight = 22;
@@ -143,6 +148,7 @@
             HistoricoBalcao.Name = "HistoricoBalcao";
             HistoricoBalcao.Size = new Size(433, 202);
             HistoricoBalcao.TabIndex = 26;
+            HistoricoBalcao.DrawItem += HistoricoBalcao_DrawItem;
             HistoricoBalcao.SelectedIndexChanged += HistoricoBalcao_SelectedIndexChanged;
             // 
             // Form6
