@@ -217,6 +217,7 @@
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form3";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela de Pagamentos";
             Load += Form3_Load;
             groupBox1.ResumeLayout(false);

@@ -51,19 +51,13 @@ namespace Cantina_Premium
                 if (pedido.Itens.Any(item => item.Chapa))
                 {
                     Pedidos.Items.Add(pedido);
-                    Pedidos.Items.Add(" ");
                 }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Pedidos.SelectedItem == null)
-            {
-                MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
+            if (Pedidos.SelectedItem != null)
             {
                 Pedido PedidoSelecionado = (Pedido)Pedidos.SelectedItem;
                 DialogResult resultado = MessageBox.Show("Deseja cancelar este pedido ? ", "Cancelamento", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -71,6 +65,7 @@ namespace Cantina_Premium
                 if (resultado == DialogResult.Yes)
                 {
                     PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
+                    Historico.Items.Remove($"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Preparando");
                     Preparando.Items.Clear();
                     MessageBox.Show("Pedido cancelado com sucesso", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Form4_Load(null, null);
@@ -79,6 +74,11 @@ namespace Cantina_Premium
                 {
                     MessageBox.Show("Pedido não cancelado", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -113,7 +113,7 @@ namespace Cantina_Premium
 
         private void Historico_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Historico.ClearSelected();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -123,45 +123,53 @@ namespace Cantina_Premium
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Pedido PedidoSelecionado = (Pedido)Pedidos.SelectedItem;
-            DialogResult resultado = MessageBox.Show("Este pedido foi finalizado ? ", "Finalização", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            if (resultado == DialogResult.Yes)
+            if (Pedidos.SelectedItem != null)
             {
-                PedidoSelecionado.Status = "- Finalizado";
-                string historicoPreparando = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Preparando";
-                string historicoFinalizado = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Finalizado";
-                if (Historico.Items.Contains(historicoPreparando))
+
+                Pedido PedidoSelecionado = (Pedido)Pedidos.SelectedItem;
+                DialogResult resultado = MessageBox.Show("Este pedido foi finalizado ? ", "Finalização", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (resultado == DialogResult.Yes)
                 {
-                    Historico.Items.Remove(historicoPreparando);
+                    PedidoSelecionado.Status = "- Finalizado";
+                    string historicoPreparando = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Preparando";
+                    string historicoFinalizado = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Finalizado";
+                    if (Historico.Items.Contains(historicoPreparando))
+                    {
+                        Historico.Items.Remove(historicoPreparando);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este pedido não está sendo preparado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (!Historico.Items.Contains(historicoFinalizado))
+                    {
+                        Historico.Items.Add(historicoFinalizado);
+
+                    }
+                    if (!HistoricoGlobal.HistoricoPedidos.Any(p => p.Id == PedidoSelecionado.Id))
+                    {
+                        HistoricoGlobal.HistoricoPedidos.Add(PedidoSelecionado);
+                    }
+
+
+                    Preparando.Items.Clear();
+                    Pedidos.Items.Remove(PedidoSelecionado);
+                    PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
+
+                    MessageBox.Show("Pedido Finalizado com Sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Form4_Load(null, null);
                 }
-                else
+                if (resultado == DialogResult.No)
                 {
-                    MessageBox.Show("Este pedido não está sendo preparado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show("Pedido não finalizado", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (!Historico.Items.Contains(historicoFinalizado))
-                {
-                    Historico.Items.Add(historicoFinalizado);
-
-                }
-                if (!HistoricoGlobal.HistoricoPedidos.Any(p => p.Id == PedidoSelecionado.Id))
-                {
-                    HistoricoGlobal.HistoricoPedidos.Add(PedidoSelecionado);
-                }
-
-
-                Preparando.Items.Clear();
-                Pedidos.Items.Remove(PedidoSelecionado);
-                PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
-
-                MessageBox.Show("Pedido Finalizado com Sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                Form4_Load(null, null);
             }
-            if (resultado == DialogResult.No)
+            else
             {
-                MessageBox.Show("Pedido não finalizado", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

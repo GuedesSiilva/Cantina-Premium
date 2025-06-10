@@ -71,7 +71,7 @@ namespace Cantina_Premium
         {
             int selectedIndex = Cardapio.SelectedIndex;
 
-            // Desabilita o redraw para evitar flicker e lentidão
+
             Cardapio.BeginUpdate();
             Cardapio.Items.Clear();
             foreach (var item in Estoque.Itens)
@@ -80,7 +80,6 @@ namespace Cantina_Premium
             }
             Cardapio.EndUpdate();
 
-            // Restaura a seleção anterior, se possível
             if (selectedIndex >= 0 && selectedIndex < Cardapio.Items.Count)
                 Cardapio.SelectedIndex = selectedIndex;
         }
@@ -94,7 +93,7 @@ namespace Cantina_Premium
                     MessageBox.Show("Estoque insuficiente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else if (produtoSelecionado.Quantidade < 5)
+                else if (produtoSelecionado.Quantidade <= 5)
                 { 
                     MessageBox.Show("Estoque baixo! Apenas " + produtoSelecionado.Quantidade + " unidades restantes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -191,7 +190,7 @@ namespace Cantina_Premium
             foreach (Cardapio item in Pedindo.Items)
             {
 
-                somaFinal += item.Preco;
+                somaFinal += item.Preco * item.Quantidade;
             }
             if (Pedindo.Items.Count == 0)
             {

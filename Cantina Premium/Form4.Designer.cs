@@ -131,6 +131,7 @@
             // Historico
             // 
             Historico.BackColor = Color.FromArgb(243, 241, 238);
+            Historico.Cursor = Cursors.No;
             Historico.DrawMode = DrawMode.OwnerDrawFixed;
             Historico.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Historico.FormattingEnabled = true;

@@ -34,7 +34,6 @@
             button3 = new Button();
             button1 = new Button();
             button2 = new Button();
-            button4 = new Button();
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
@@ -102,23 +101,11 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(243, 241, 238);
-            button4.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(563, 411);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(243, 97);
-            button4.TabIndex = 15;
-            button4.Text = "💵 Administração";
-            button4.UseVisualStyleBackColor = false;
-            // 
             // button5
             // 
             button5.BackColor = Color.FromArgb(243, 241, 238);
             button5.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(220, 516);
+            button5.Location = new Point(563, 411);
             button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
             button5.Size = new Size(243, 97);
@@ -131,7 +118,7 @@
             // 
             button6.BackColor = Color.FromArgb(243, 241, 238);
             button6.Font = new Font("Inter SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.Location = new Point(563, 516);
+            button6.Location = new Point(392, 516);
             button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
             button6.Size = new Size(243, 97);
@@ -160,7 +147,6 @@
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
-            Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(button3);
