@@ -35,6 +35,7 @@
             Senha = new TextBox();
             label2 = new Label();
             pictureBox2 = new PictureBox();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             button1.TabIndex = 4;
             button1.Text = "ENTRAR";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -68,7 +70,7 @@
             User.BackColor = Color.FromArgb(202, 196, 183);
             User.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             User.ForeColor = SystemColors.WindowFrame;
-            User.Location = new Point(268, 290);
+            User.Location = new Point(268, 303);
             User.Margin = new Padding(3, 4, 3, 4);
             User.Multiline = true;
             User.Name = "User";
@@ -82,7 +84,7 @@
             Senha.BackColor = Color.FromArgb(202, 196, 183);
             Senha.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Senha.ForeColor = SystemColors.WindowFrame;
-            Senha.Location = new Point(268, 351);
+            Senha.Location = new Point(268, 377);
             Senha.Margin = new Padding(3, 4, 3, 4);
             Senha.Multiline = true;
             Senha.Name = "Senha";
@@ -96,7 +98,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(243, 241, 238);
             label2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(479, 246);
+            label2.Location = new Point(479, 268);
             label2.Name = "label2";
             label2.Size = new Size(59, 23);
             label2.TabIndex = 8;
@@ -105,14 +107,27 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(268, 62);
+            pictureBox2.Location = new Point(268, 53);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(475, 168);
+            pictureBox2.Size = new Size(473, 188);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 9;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
+            checkBox1.ForeColor = SystemColors.Control;
+            checkBox1.Location = new Point(747, 385);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(64, 35);
+            checkBox1.TabIndex = 10;
+            checkBox1.Text = "👁️‍🗨️";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // Form1
             // 
@@ -120,6 +135,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1028, 660);
+            Controls.Add(checkBox1);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
             Controls.Add(Senha);
@@ -131,6 +147,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Tela de Login";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -143,5 +160,6 @@
         private TextBox Senha;
         private Label label2;
         private PictureBox pictureBox2;
+        private CheckBox checkBox1;
     }
 }

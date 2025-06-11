@@ -47,8 +47,9 @@
             // 
             Pedidos.BackColor = Color.FromArgb(243, 241, 238);
             Pedidos.DrawMode = DrawMode.OwnerDrawFixed;
-            Pedidos.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Pedidos.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold);
             Pedidos.FormattingEnabled = true;
+            Pedidos.HorizontalScrollbar = true;
             Pedidos.ItemHeight = 18;
             Pedidos.Location = new Point(33, 104);
             Pedidos.Name = "Pedidos";

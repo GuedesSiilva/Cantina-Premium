@@ -27,6 +27,7 @@ namespace Cantina_Premium
                     Preparando.Items.Add($"Item: {item.Nome} - Quantidade: {item.Quantidade}");
                 }
             }
+
         }
 
 
@@ -37,8 +38,8 @@ namespace Cantina_Premium
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
-            form5.Show();
+            Form1 form1 = new Form1();
+            form1.Show();
             this.Hide();
         }
 

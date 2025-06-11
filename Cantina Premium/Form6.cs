@@ -30,8 +30,8 @@ namespace Cantina_Premium
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
-            form5.Show();
+            Form1 form1 = new Form1();
+            form1.Show();
             this.Hide();
         }
 
