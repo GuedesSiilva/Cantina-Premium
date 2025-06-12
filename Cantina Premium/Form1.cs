@@ -181,8 +181,8 @@ namespace Cantina_Premium
                 }
                 else if (usuario == "balcão")
                 {
-                    Form4 form4 = new Form4();
-                    form4.Show();
+                    Form6 form6 = new Form6();
+                    form6.Show();
                     this.Hide();
                 }
 
