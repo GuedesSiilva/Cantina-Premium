@@ -51,7 +51,7 @@
             // 
             Cardapio.BackColor = Color.FromArgb(243, 241, 238);
             Cardapio.DrawMode = DrawMode.OwnerDrawFixed;
-            Cardapio.Font = new Font("Consolas", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Cardapio.Font = new Font("Consolas", 16.5F);
             Cardapio.FormattingEnabled = true;
             Cardapio.ItemHeight = 28;
             Cardapio.Location = new Point(33, 132);

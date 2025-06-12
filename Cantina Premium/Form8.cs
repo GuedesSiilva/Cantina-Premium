@@ -20,6 +20,14 @@ namespace Cantina_Premium
         public static void AlterarFundoLista(object sender, DrawItemEventArgs e)
         {
         }
+        private void AtualizarLista()
+        {
+            listEstoque.Items.Clear();
+            foreach (var item in Estoque.Itens.OrderBy(x => x.ID))
+            {
+                listEstoque.Items.Add(item);
+            }
+        }
         private void listEstoque_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index < 0) return;
@@ -53,14 +61,18 @@ namespace Cantina_Premium
         {
             listEstoque.DrawMode = DrawMode.OwnerDrawFixed;
             listEstoque.DrawItem += listEstoque_DrawItem;
-            foreach (var item in Estoque.Itens)
-            {
-                listEstoque.Items.Add(item);
-            }
+           AtualizarLista();
         }
 
         private void AddItem_Click(object sender, EventArgs e)
         {
+            int IDitem;
+            string IDitemSTR = Microsoft.VisualBasic.Interaction.InputBox("Digite o ID do item:", "Adicionar Item", "0");
+            if (!int.TryParse(IDitemSTR, out IDitem) || IDitem < 0)
+            {
+                MessageBox.Show("ID inválido. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string nomeItem = Microsoft.VisualBasic.Interaction.InputBox("Digite o nome do item:", "Adicionar Item", "");
             if (string.IsNullOrWhiteSpace(nomeItem))
             {
@@ -101,8 +113,8 @@ namespace Cantina_Premium
                 MessageBox.Show("Resposta inválida. Por favor, responda com 'Sim' ou 'Não'.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Estoque.Itens.Add(new Cardapio(nomeItem, preco, quantidade, chapa));
-            listEstoque.Items.Add(new Cardapio(nomeItem, preco, quantidade, chapa));
+            Estoque.Itens.Add(new Cardapio(IDitem,nomeItem, preco, quantidade, chapa));
+            AtualizarLista();
 
         }
 
@@ -113,6 +125,7 @@ namespace Cantina_Premium
                 Estoque.Itens.Remove(pedidoSelecionado);
                 listEstoque.Items.Remove(pedidoSelecionado);
             }
+            AtualizarLista();
         }
 
         private void Quant_Click(object sender, EventArgs e)
@@ -134,6 +147,8 @@ namespace Cantina_Premium
             {
                 MessageBox.Show("Nenhum item selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            AtualizarLista();
+
         }
 
         private void EditItem_Click(object sender, EventArgs e)
@@ -141,6 +156,12 @@ namespace Cantina_Premium
             if (listEstoque.SelectedItem != null)
             {
                 Cardapio itemSelecionado = (Cardapio)listEstoque.SelectedItem;
+                string IDitemSTR = Microsoft.VisualBasic.Interaction.InputBox("Digite o ID do item:", "Editar Item", itemSelecionado.ID.ToString());
+                if (!int.TryParse(IDitemSTR, out int IDitem) || IDitem < 0)
+                {
+                    MessageBox.Show("ID inválido. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 string novoNome = Microsoft.VisualBasic.Interaction.InputBox("Digite o novo nome do item:", "Editar Item", itemSelecionado.Nome);
                 if (string.IsNullOrWhiteSpace(novoNome))
                 {
@@ -174,14 +195,16 @@ namespace Cantina_Premium
                     MessageBox.Show("Resposta inválida. Por favor, responda com 'Sim' ou 'Não'.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                // Atualiza o item selecionado
+
+                itemSelecionado.ID = IDitem;
                 itemSelecionado.Nome = novoNome;
                 itemSelecionado.Quantidade = novaQuantidade;
                 itemSelecionado.Preco = novoPreco;
                 itemSelecionado.Chapa = novaChapa;
 
-                listEstoque.Items[listEstoque.SelectedIndex] = itemSelecionado; // Atualiza o item na lista
+                listEstoque.Items[listEstoque.SelectedIndex] = itemSelecionado;
             }
+            AtualizarLista();
         }
 
         private void button5_Click(object sender, EventArgs e)

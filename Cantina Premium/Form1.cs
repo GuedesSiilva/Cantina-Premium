@@ -101,16 +101,16 @@ namespace Cantina_Premium
         {
             if (Estoque.Itens.Count == 0)
             {
-                Estoque.Itens.Add(new Cardapio("Pão de Queijo", 3.50, 10, false));
-                Estoque.Itens.Add(new Cardapio("Coxinha", 5.00, 10, false));
-                Estoque.Itens.Add(new Cardapio("Pastel de Carne", 6.00, 10, true));
-                Estoque.Itens.Add(new Cardapio("Pastel de Queijo", 5.50, 10, true));
-                Estoque.Itens.Add(new Cardapio("Suco Natural (300ml)", 4.00, 10, false));
-                Estoque.Itens.Add(new Cardapio("Refrigerante Lata", 4.50, 10, false));
-                Estoque.Itens.Add(new Cardapio("Hambúrguer Simples", 8.00, 10, true));
-                Estoque.Itens.Add(new Cardapio("Hambúrguer com Queijo", 9.00, 10, true));
-                Estoque.Itens.Add(new Cardapio("X-Tudo", 12.00, 10, true));
-                Estoque.Itens.Add(new Cardapio("Água Mineral (500ml)", 2.50, 10, false));
+                Estoque.Itens.Add(new Cardapio(10,"Pão de Queijo", 3.50, 10, false));
+                Estoque.Itens.Add(new Cardapio(1, "Coxinha", 5.00, 10, false));
+                Estoque.Itens.Add(new Cardapio(2,"Pastel de Carne", 6.00, 10, true));
+                Estoque.Itens.Add(new Cardapio(3, "Pastel de Queijo", 5.50, 10, true));
+                Estoque.Itens.Add(new Cardapio(4, "Suco Natural (300ml)", 4.00, 10, false));
+                Estoque.Itens.Add(new Cardapio(5, "Refrigerante Lata", 4.50, 10, false));
+                Estoque.Itens.Add(new Cardapio(6, "Hambúrguer Simples", 8.00, 10, true));
+                Estoque.Itens.Add(new Cardapio(7, "Hambúrguer com Queijo", 9.00, 10, true));
+                Estoque.Itens.Add(new Cardapio(8, "X-Tudo", 12.00, 10, true));
+                Estoque.Itens.Add(new Cardapio(9, "Água Mineral (500ml)", 2.50, 10, false));
             }
             Senha.Text = "Digite sua Senha:";
             Senha.ForeColor = Color.Gray;

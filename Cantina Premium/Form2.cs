@@ -29,9 +29,8 @@ namespace Cantina_Premium
         }
         public void Form2_Load(object sender, EventArgs e)
         {
-           
             Cardapio.Items.Clear();
-            foreach (var item in Estoque.Itens)
+            foreach (var item in Estoque.Itens.OrderBy(x => x.ID))
             {
                 Cardapio.Items.Add(item);
             }
@@ -62,7 +61,7 @@ namespace Cantina_Premium
 
             Cardapio.BeginUpdate();
             Cardapio.Items.Clear();
-            foreach (var item in Estoque.Itens)
+            foreach (var item in Estoque.Itens.OrderBy(x => x.ID))
             {
                 Cardapio.Items.Add(item);
             }
@@ -102,7 +101,7 @@ namespace Cantina_Premium
                 }
                 if (!encontrado)
                 {
-                    Cardapio novoItem = new Cardapio(produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
+                    Cardapio novoItem = new Cardapio(produtoSelecionado.ID,produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
                     Pedindo.Items.Add(novoItem);
                 }
 
@@ -225,7 +224,7 @@ namespace Cantina_Premium
                     Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
                     NomeCliente = textBox1.Text,
                     Itens = Pedindo.Items.Cast<Cardapio>()
-                     .Select(item => new Cardapio(item.Nome, item.Preco, item.Quantidade, item.Chapa))
+                     .Select(item => new Cardapio(item.ID, item.Nome, item.Preco, item.Quantidade, item.Chapa))
                      .ToList(),
                     DataHora = DateTime.Now,
                     Tipo = form3.Entrega,
