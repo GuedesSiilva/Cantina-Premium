@@ -41,30 +41,46 @@ namespace Cantina_Premium
 
         private void Form7_Load(object sender, EventArgs e)
         {
-            foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
+            // Últimos 5 finalizados
+            var ultimosFinalizados = HistoricoGlobal.HistoricoPedidos
+                .Where(p => p.Status == "- Finalizado")
+                .OrderByDescending(p => p.DataHora)
+                .Take(5)
+                .OrderBy(p => p.DataHora); // Exibe do mais antigo ao mais novo
+
+            listBox1.Items.Clear();
+            foreach (var pedido in ultimosFinalizados)
             {
-                if (pedido.Status == "- Finalizado")
-                {
-                    string texto = $"Cliente: {pedido.NomeCliente} | Pedido: #{pedido.Id} | {pedido.DataHora:HH:mm}";
-                    listBox1.Items.Add(texto);
-                    
-                }
+                string texto = $"Cliente: {pedido.NomeCliente} | Pedido: #{pedido.Id} | {pedido.DataHora:HH:mm}";
+                listBox1.Items.Add(texto);
             }
-            foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
+
+            // Últimos 5 preparando
+            var ultimosPreparando = PreparoPedidos.Instancia.Pedidos
+                .Where(p => p.Status == "Preparando")
+                .OrderByDescending(p => p.DataHora)
+                .Take(5)
+                .OrderBy(p => p.DataHora);
+
+            listBox3.Items.Clear();
+            foreach (var pedido in ultimosPreparando)
             {
-                if (pedido.Status == "Preparando")
-                {
-                    string texto = $"Cliente: {pedido.NomeCliente} | Pedido: #{pedido.Id} | {pedido.DataHora:HH:mm}";
-                    listBox3.Items.Add(texto);
-                }
+                string texto = $"Cliente: {pedido.NomeCliente} | Pedido: #{pedido.Id} | {pedido.DataHora:HH:mm}";
+                listBox3.Items.Add(texto);
             }
-            foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
+
+            // Últimos 5 entregues
+            var ultimosEntregues = HistoricoGlobal.HistoricoPedidos
+                .Where(p => p.Status == "- Entregue")
+                .OrderByDescending(p => p.DataHora)
+                .Take(5)
+                .OrderBy(p => p.DataHora);
+
+            listBox2.Items.Clear();
+            foreach (var pedido in ultimosEntregues)
             {
-                if (pedido.Status == "- Entregue")
-                {
-                    string texto = $"Cliente: {pedido.NomeCliente} | Pedido: #{pedido.Id} | {pedido.DataHora:HH:mm}";
-                    listBox2.Items.Add(texto);
-                }
+                string texto = $"Cliente: {pedido.NomeCliente} | Pedido: #{pedido.Id} | {pedido.DataHora:HH:mm}";
+                listBox2.Items.Add(texto);
             }
 
         }

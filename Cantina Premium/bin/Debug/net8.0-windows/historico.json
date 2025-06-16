@@ -1,0 +1,19 @@
+[
+  {
+    "Id": 1,
+    "NomeCliente": "dasdas",
+    "Itens": [
+      {
+        "ID": 4,
+        "Nome": "Suco Natural (300ml)",
+        "Preco": 4,
+        "Quantidade": 2,
+        "Chapa": false
+      }
+    ],
+    "Quantidade": 0,
+    "DataHora": "2025-06-16T10:46:11.9308927-03:00",
+    "Status": "- Entregue",
+    "Tipo": " - Consumo"
+  }
+]

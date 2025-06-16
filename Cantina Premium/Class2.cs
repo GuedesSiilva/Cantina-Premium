@@ -16,6 +16,7 @@ namespace Cantina_Premium
         public string Status { get; set; } = "";
         public string Tipo { get; set; } = "";
 
+        public Pedido() { }
         public Pedido(string Entrega)
         {
             Tipo = Entrega;

@@ -1,0 +1,72 @@
+[
+  {
+    "ID": 10,
+    "Nome": "P\u00E3o de Queijo",
+    "Preco": 3.5,
+    "Quantidade": 10,
+    "Chapa": false
+  },
+  {
+    "ID": 1,
+    "Nome": "Coxinha",
+    "Preco": 5,
+    "Quantidade": 13,
+    "Chapa": false
+  },
+  {
+    "ID": 2,
+    "Nome": "Pastel de Carne",
+    "Preco": 6,
+    "Quantidade": 10,
+    "Chapa": true
+  },
+  {
+    "ID": 3,
+    "Nome": "Pastel de Queijo",
+    "Preco": 5.5,
+    "Quantidade": 10,
+    "Chapa": true
+  },
+  {
+    "ID": 4,
+    "Nome": "Suco Natural (300ml)",
+    "Preco": 4,
+    "Quantidade": 10,
+    "Chapa": false
+  },
+  {
+    "ID": 5,
+    "Nome": "Refrigerante Lata",
+    "Preco": 4.5,
+    "Quantidade": 14,
+    "Chapa": false
+  },
+  {
+    "ID": 6,
+    "Nome": "Hamb\u00FArguer Simples",
+    "Preco": 8,
+    "Quantidade": 10,
+    "Chapa": true
+  },
+  {
+    "ID": 7,
+    "Nome": "Hamb\u00FArguer com Queijo",
+    "Preco": 9,
+    "Quantidade": 10,
+    "Chapa": true
+  },
+  {
+    "ID": 8,
+    "Nome": "X-Tudo",
+    "Preco": 12,
+    "Quantidade": 10,
+    "Chapa": true
+  },
+  {
+    "ID": 9,
+    "Nome": "\u00C1gua Mineral (500ml)",
+    "Preco": 2.5,
+    "Quantidade": 10,
+    "Chapa": false
+  }
+]

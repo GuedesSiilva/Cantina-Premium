@@ -37,6 +37,12 @@ namespace Cantina_Premium
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button5.Visible = true;
+                button4.Visible = false;
+            }
+            HistoricoGlobal.HistoricoPedidos = Persistencia.CarregarLista<Pedido>("historico.json");
             PedidosBalcao.Items.Clear();
             foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
             {
@@ -83,6 +89,8 @@ namespace Cantina_Premium
                     pedidoSelecionado.Status = "- Entregue";
                     PedidosBalcao.Items[PedidosBalcao.SelectedIndex] = pedidoSelecionado;
                     PreparoPedidos.Instancia.Pedidos.Remove(pedidoSelecionado);
+                    Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "historico.json");
+
                     PedidosBalcao.Items.Remove(pedidoSelecionado);
                     ComandaBalcao.Items.Clear();
                     HistoricoBalcao.Items.Add(pedidoSelecionado);
@@ -173,6 +181,18 @@ namespace Cantina_Premium
             }
 
             e.DrawFocusRectangle();
+        }
+
+        private void Form6_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.Show();
+            this.Hide();
         }
     }
 }

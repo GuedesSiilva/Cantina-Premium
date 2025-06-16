@@ -153,6 +153,7 @@
             Controls.Add(label2);
             Controls.Add(pictureBox2);
             Name = "Form5";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form5";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

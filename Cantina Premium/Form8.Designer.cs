@@ -142,6 +142,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(label1);
             Name = "Form8";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form8";
             Load += Form8_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

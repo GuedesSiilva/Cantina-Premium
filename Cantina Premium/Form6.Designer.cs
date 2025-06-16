@@ -38,6 +38,7 @@
             PedidosBalcao = new ListBox();
             ComandaBalcao = new ListBox();
             HistoricoBalcao = new ListBox();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -151,12 +152,24 @@
             HistoricoBalcao.DrawItem += HistoricoBalcao_DrawItem;
             HistoricoBalcao.SelectedIndexChanged += HistoricoBalcao_SelectedIndexChanged;
             // 
+            // button5
+            // 
+            button5.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(33, 569);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 27;
+            button5.Text = "↩️";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(930, 604);
+            Controls.Add(button5);
             Controls.Add(HistoricoBalcao);
             Controls.Add(ComandaBalcao);
             Controls.Add(PedidosBalcao);
@@ -167,7 +180,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form6";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form6";
+            Load += Form6_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -186,5 +201,6 @@
         private ListBox HistoricoBalcao;
         private ListBox PedidosBalcao;
         private ListBox ComandaBalcao;
+        private Button button5;
     }
 }

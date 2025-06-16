@@ -45,6 +45,11 @@ namespace Cantina_Premium
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button5.Visible = true;
+                button4.Visible = false;
+            }
             Pedidos.Items.Clear();
 
             foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
@@ -133,6 +138,7 @@ namespace Cantina_Premium
                 if (resultado == DialogResult.Yes)
                 {
                     PedidoSelecionado.Status = "- Finalizado";
+                    
                     string historicoPreparando = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Preparando";
                     string historicoFinalizado = $"Pedido #{PedidoSelecionado.Id} - Cliente: {PedidoSelecionado.NomeCliente} - Finalizado";
                     if (Historico.Items.Contains(historicoPreparando))
@@ -141,7 +147,7 @@ namespace Cantina_Premium
                     }
                     else
                     {
-                        MessageBox.Show("Este pedido não está sendo preparado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Você precisa clicar em 'Preparar' antes de finalizar o pedido.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (!Historico.Items.Contains(historicoFinalizado))
@@ -153,11 +159,15 @@ namespace Cantina_Premium
                     {
                         HistoricoGlobal.HistoricoPedidos.Add(PedidoSelecionado);
                     }
+                    PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
+
+                    Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "historico.json");
+                    Persistencia.SalvarLista(PreparoPedidos.Instancia.Pedidos, "pedidos.json");
 
 
                     Preparando.Items.Clear();
                     Pedidos.Items.Remove(PedidoSelecionado);
-                    PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
+
 
                     MessageBox.Show("Pedido Finalizado com Sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -247,6 +257,15 @@ namespace Cantina_Premium
             }
 
             e.DrawFocusRectangle();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            {
+                Form5 form5 = new Form5();
+                form5.Show();
+                this.Hide();
+            }
         }
     }
 }

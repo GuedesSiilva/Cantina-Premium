@@ -43,6 +43,7 @@
             label4 = new Label();
             button4 = new Button();
             button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -214,12 +215,24 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // button6
+            // 
+            button6.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Location = new Point(33, 625);
+            button6.Name = "button6";
+            button6.Size = new Size(75, 23);
+            button6.TabIndex = 15;
+            button6.Text = "↩️";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(1028, 660);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label4);
@@ -238,6 +251,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela de Vendas";
             Load += Form2_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -262,5 +276,7 @@
         private Label label4;
         private Button button4;
         private Button button5;
+        private Button button6;
+        private Button VoltarADM;
     }
 }

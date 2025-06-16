@@ -29,6 +29,11 @@ namespace Cantina_Premium
         }
         public void Form2_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            { 
+             button6.Visible = true;
+                button5.Visible = false;
+            }
             Cardapio.Items.Clear();
             foreach (var item in Estoque.Itens.OrderBy(x => x.ID))
             {
@@ -54,7 +59,8 @@ namespace Cantina_Premium
         private void label2_Click(object sender, EventArgs e)
         {
 
-        } private void AtualizarCardapioListBox()
+        }
+        private void AtualizarCardapioListBox()
         {
             int selectedIndex = Cardapio.SelectedIndex;
 
@@ -81,10 +87,10 @@ namespace Cantina_Premium
                     return;
                 }
                 else if (produtoSelecionado.Quantidade <= 5)
-                { 
+                {
                     MessageBox.Show("Estoque baixo! Apenas " + produtoSelecionado.Quantidade + " unidades restantes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                    bool encontrado = false;
+                bool encontrado = false;
                 foreach (Cardapio item in Pedindo.Items)
                 {
                     if (item.Nome == produtoSelecionado.Nome)
@@ -101,11 +107,12 @@ namespace Cantina_Premium
                 }
                 if (!encontrado)
                 {
-                    Cardapio novoItem = new Cardapio(produtoSelecionado.ID,produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
+                    Cardapio novoItem = new Cardapio(produtoSelecionado.ID, produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
                     Pedindo.Items.Add(novoItem);
                 }
 
                 produtoSelecionado.Quantidade--;
+                Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
                 AtualizarCardapioListBox();
                 Cardapio.Focus();
 
@@ -149,15 +156,17 @@ namespace Cantina_Premium
                             Pedindo.Items.Remove(item);
                         }
                         else
-                            {
-                                int index = Pedindo.Items.IndexOf(item);
-                                Pedindo.Items.RemoveAt(index);
-                                Pedindo.Items.Insert(index, item);
-                            }
-                            break;
+                        {
+                            int index = Pedindo.Items.IndexOf(item);
+                            Pedindo.Items.RemoveAt(index);
+                            Pedindo.Items.Insert(index, item);
                         }
+                        break;
+                    }
                 }
-                 AtualizarCardapioListBox();
+                Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
+                Persistencia.SalvarLista(PreparoPedidos.Instancia.Pedidos, "pedidos.json");
+                AtualizarCardapioListBox();
                 double somaTotal = 0;
                 foreach (Cardapio item in Pedindo.Items)
                 {
@@ -231,10 +240,14 @@ namespace Cantina_Premium
                 };
 
                 PreparoPedidos.Instancia.Pedidos.Add(novoPedido);
+                Persistencia.SalvarLista(PreparoPedidos.Instancia.Pedidos, "pedidos.json");
+                Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
                 if (!novoPedido.Itens.Any(item => item.Chapa))
                 {
                     novoPedido.Status = "- Finalizado";
                     HistoricoGlobal.HistoricoPedidos.Add(novoPedido);
+                    Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "historico.json");
+
                 }
                 textBox1.Clear();
                 Pedindo.Items.Clear();
@@ -270,12 +283,12 @@ namespace Cantina_Premium
             {
                 var estoqueItem = Estoque.Itens.FirstOrDefault(x => x.Nome == item.Nome);
                 if (estoqueItem != null)
-                    estoqueItem.Quantidade += item.Quantidade;  
+                    estoqueItem.Quantidade += item.Quantidade;
             }
-
-            Pedindo.Items.Clear(); 
-            AtualizarCardapioListBox(); 
-            label3.Text = "R$ 0,00"; 
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
+            Pedindo.Items.Clear();
+            AtualizarCardapioListBox();
+            label3.Text = "R$ 0,00";
         }
 
         private void Form2_Load_1(object sender, EventArgs e)
@@ -338,6 +351,14 @@ namespace Cantina_Premium
             }
 
             e.DrawFocusRectangle();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+                Form5 form5 = new Form5();
+                form5.Show();
+                this.Hide();
         }
     }
 }

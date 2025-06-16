@@ -35,7 +35,7 @@
             Senha = new TextBox();
             label2 = new Label();
             pictureBox2 = new PictureBox();
-            checkBox1 = new CheckBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -116,18 +116,16 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
-            // checkBox1
+            // button3
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Inter SemiBold", 16F, FontStyle.Bold);
-            checkBox1.ForeColor = SystemColors.Control;
-            checkBox1.Location = new Point(747, 385);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(64, 35);
-            checkBox1.TabIndex = 10;
-            checkBox1.Text = "👁️‍🗨️";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold);
+            button3.Location = new Point(751, 381);
+            button3.Name = "button3";
+            button3.Size = new Size(37, 39);
+            button3.TabIndex = 11;
+            button3.Text = "👁️‍🗨️";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // Form1
             // 
@@ -135,7 +133,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1028, 660);
-            Controls.Add(checkBox1);
+            Controls.Add(button3);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
             Controls.Add(Senha);
@@ -146,7 +144,9 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela de Login";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -160,6 +160,6 @@
         private TextBox Senha;
         private Label label2;
         private PictureBox pictureBox2;
-        private CheckBox checkBox1;
+        private Button button3;
     }
 }

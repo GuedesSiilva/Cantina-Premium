@@ -31,7 +31,7 @@ namespace Cantina_Premium
             {
                 Senha.Text = "";
                 Senha.ForeColor = Color.Black;
-                Senha.PasswordChar = '#' ;
+                Senha.PasswordChar = '*';
             }
         }
         private void Senha_Leave(object sender, EventArgs e)
@@ -99,11 +99,14 @@ namespace Cantina_Premium
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            UsuarioGlobal.Usuarios = Persistencia.CarregarLista<Usuario>("usuarios.json");
+            Estoque.Itens = Persistencia.CarregarLista<Cardapio>("estoque.json");
+            HistoricoGlobal.HistoricoPedidos = Persistencia.CarregarLista<Pedido>("historico.json");
             if (Estoque.Itens.Count == 0)
             {
-                Estoque.Itens.Add(new Cardapio(10,"Pão de Queijo", 3.50, 10, false));
+                Estoque.Itens.Add(new Cardapio(10, "Pão de Queijo", 3.50, 10, false));
                 Estoque.Itens.Add(new Cardapio(1, "Coxinha", 5.00, 10, false));
-                Estoque.Itens.Add(new Cardapio(2,"Pastel de Carne", 6.00, 10, true));
+                Estoque.Itens.Add(new Cardapio(2, "Pastel de Carne", 6.00, 10, true));
                 Estoque.Itens.Add(new Cardapio(3, "Pastel de Queijo", 5.50, 10, true));
                 Estoque.Itens.Add(new Cardapio(4, "Suco Natural (300ml)", 4.00, 10, false));
                 Estoque.Itens.Add(new Cardapio(5, "Refrigerante Lata", 4.50, 10, false));
@@ -127,25 +130,19 @@ namespace Cantina_Premium
                 return builder.ToString();
             }
         }
-        private static string GerarHashStatic(string senha)
+        private void GerarArquivoUsuarios()
         {
-            using (SHA256 sha256 = SHA256.Create())
+            var usuarios = new List<Usuario>
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
-                StringBuilder builder = new StringBuilder();
-                foreach (var b in bytes)
-                    builder.Append(b.ToString("x2"));
-                return builder.ToString();
-            }
+                new Usuario { Nome = "admin", Senha = GerarHash("admin") },
+                new Usuario { Nome = "caixa", Senha = GerarHash("vendasBolt") },
+                new Usuario { Nome = "telão", Senha = GerarHash("telãoBolt") },
+                new Usuario { Nome = "cozinha", Senha = GerarHash("cozinhaBolt") },
+                new Usuario { Nome = "balcão", Senha = GerarHash("balcãoBolt") }
+            };
+            Persistencia.SalvarLista(usuarios, "usuarios.json");
         }
-        private readonly Dictionary<string, string> usuarios = new()
-        {
-            { "admin", GerarHashStatic("admin") },
-            { "caixa", GerarHashStatic("vendasBolt") },
-            { "telão", GerarHashStatic("telãoBolt") },
-            { "cozinha", GerarHashStatic("cozinhaBolt") },
-            { "balcão", GerarHashStatic("balcãoBolt") }
-        };
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -153,8 +150,10 @@ namespace Cantina_Premium
             string senhaDigitada = Senha.Text;
             string hashSenha = GerarHash(senhaDigitada);
 
-            if (usuarios.TryGetValue(usuario, out string hashSalvoUsuario) && hashSenha == hashSalvoUsuario)
+            var usuarioObj = UsuarioGlobal.Usuarios.FirstOrDefault(u => u.Nome == usuario);
+            if (usuarioObj != null && usuarioObj.Senha == hashSenha)
             {
+                UsuarioGlobal.UsuarioLogado = usuario;
                 if (usuario == "admin")
                 {
                     Form5 form5 = new Form5();
@@ -195,13 +194,28 @@ namespace Cantina_Premium
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                Senha.PasswordChar = '\0'; 
-            }
-            else
-            {
-                Senha.PasswordChar = '*'; 
+           
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Persistencia.SalvarLista(UsuarioGlobal.Usuarios, "usuarios.json");
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
+            Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "historico.json");
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if(Senha.Text != "Digite sua Senha:")
+            { 
+                    if (Senha.PasswordChar == '*')
+                {
+                        Senha.PasswordChar = '\0';
+                    }
+                else
+                    {
+                        Senha.PasswordChar = '*';
+                    }
             }
         }
     }

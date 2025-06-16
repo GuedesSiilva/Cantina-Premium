@@ -40,6 +40,7 @@
             label3 = new Label();
             button2 = new Button();
             button1 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -182,12 +183,24 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // button5
+            // 
+            button5.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(33, 569);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 23);
+            button5.TabIndex = 13;
+            button5.Text = "↩️";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(930, 604);
+            Controls.Add(button5);
             Controls.Add(label3);
             Controls.Add(Historico);
             Controls.Add(button4);
@@ -200,6 +213,7 @@
             Controls.Add(label1);
             Controls.Add(Pedidos);
             Name = "Form4";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela da Cozinha";
             Load += Form4_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -220,5 +234,6 @@
         private Label label3;
         private Button button2;
         private Button button1;
+        private Button button5;
     }
 }

@@ -114,6 +114,7 @@ namespace Cantina_Premium
                 return;
             }
             Estoque.Itens.Add(new Cardapio(IDitem,nomeItem, preco, quantidade, chapa));
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
             AtualizarLista();
 
         }
@@ -125,6 +126,7 @@ namespace Cantina_Premium
                 Estoque.Itens.Remove(pedidoSelecionado);
                 listEstoque.Items.Remove(pedidoSelecionado);
             }
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
             AtualizarLista();
         }
 
@@ -147,6 +149,7 @@ namespace Cantina_Premium
             {
                 MessageBox.Show("Nenhum item selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
             AtualizarLista();
 
         }
@@ -204,13 +207,14 @@ namespace Cantina_Premium
 
                 listEstoque.Items[listEstoque.SelectedIndex] = itemSelecionado;
             }
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
             AtualizarLista();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            Form5 form5 = new Form5();
+            form5.Show();
             this.Hide();
         }
     }

@@ -160,6 +160,7 @@
             Controls.Add(listBox2);
             Controls.Add(listBox1);
             Name = "Form7";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form7";
             Load += Form7_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
