@@ -10,7 +10,7 @@
     "ID": 1,
     "Nome": "Coxinha",
     "Preco": 5,
-    "Quantidade": 13,
+    "Quantidade": 10,
     "Chapa": false
   },
   {
@@ -38,7 +38,7 @@
     "ID": 5,
     "Nome": "Refrigerante Lata",
     "Preco": 4.5,
-    "Quantidade": 14,
+    "Quantidade": 12,
     "Chapa": false
   },
   {

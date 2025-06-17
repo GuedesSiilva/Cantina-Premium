@@ -50,6 +50,20 @@ namespace Cantina_Premium
                 button5.Visible = true;
                 button4.Visible = false;
             }
+            Historico.Items.Clear();
+            var historicoPedidos = Persistencia.CarregarLista<Pedido>("historico.json");
+            if (historicoPedidos != null)
+            {
+                foreach (var pedido in historicoPedidos)
+                {
+                    if (pedido.Status == "Preparando" || pedido.Status.Contains("Finalizado"))
+                    {
+                        string historicoTexto = $"Pedido #{pedido.Id} - Cliente: {pedido.NomeCliente} - {pedido.Status.Replace("- ", "")}";
+                        if (!Historico.Items.Contains(historicoTexto))
+                            Historico.Items.Add(historicoTexto);
+                    }
+                }
+            }
             Pedidos.Items.Clear();
 
             foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
@@ -113,6 +127,14 @@ namespace Cantina_Premium
                 else
                 {
                     Historico.Items.Add(historicoTexto);
+
+                    // Adicione ao histórico global e salve
+                    if (!HistoricoGlobal.HistoricoPedidos.Any(p => p.Id == pedidoSelecionado.Id && p.Status == "Preparando"))
+                    {
+                        HistoricoGlobal.HistoricoPedidos.RemoveAll(p => p.Id == pedidoSelecionado.Id);
+                        HistoricoGlobal.HistoricoPedidos.Add(pedidoSelecionado);
+                        Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "historico.json");
+                    }
                 }
             }
         }
@@ -159,6 +181,9 @@ namespace Cantina_Premium
                     {
                         HistoricoGlobal.HistoricoPedidos.Add(PedidoSelecionado);
                     }
+                    HistoricoGlobal.HistoricoPedidos.RemoveAll(p => p.Id == PedidoSelecionado.Id);
+                    HistoricoGlobal.HistoricoPedidos.Add(PedidoSelecionado);
+
                     PreparoPedidos.Instancia.Pedidos.Remove(PedidoSelecionado);
 
                     Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "historico.json");

@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "Id": 4,
+    "NomeCliente": "Bispo",
+    "Itens": [
+      {
+        "ID": 9,
+        "Nome": "\u00C1gua Mineral (500ml)",
+        "Preco": 2.5,
+        "Quantidade": 2,
+        "Chapa": false
+      }
+    ],
+    "Quantidade": 0,
+    "DataHora": "2025-06-17T09:06:32.3758111-03:00",
+    "Status": "- Finalizado",
+    "Tipo": " - Consumo"
+  }
+]

@@ -227,10 +227,23 @@ namespace Cantina_Premium
 
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                var pedidosEmPreparo = Persistencia.CarregarLista<Pedido>("pedidos.json");
+                var historico = Persistencia.CarregarLista<Pedido>("historico.json");
+
+  
+                int maiorId = 0;
+                if (pedidosEmPreparo.Any())
+                    maiorId = pedidosEmPreparo.Max(p => p.Id);
+                if (historico.Any())
+                    maiorId = Math.Max(maiorId, historico.Max(p => p.Id));
+
+
+                int novoId = maiorId + 1;
+
 
                 Pedido novoPedido = new(form3.Entrega)
                 {
-                    Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
+                    Id = novoId,
                     NomeCliente = textBox1.Text,
                     Itens = Pedindo.Items.Cast<Cardapio>()
                      .Select(item => new Cardapio(item.ID, item.Nome, item.Preco, item.Quantidade, item.Chapa))
@@ -259,8 +272,18 @@ namespace Cantina_Premium
                 DialogResult resultado2 = MessageBox.Show("Deseja remover todos os itens do pedido?", "Remover Itens", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado2 == DialogResult.Yes)
                 {
+                    var itensParaDevolver = Pedindo.Items.Cast<Cardapio>().ToList();
+
+                    foreach (Cardapio item in itensParaDevolver)
+                    {
+                        var estoqueItem = Estoque.Itens.FirstOrDefault(x => x.Nome == item.Nome);
+                        if (estoqueItem != null)
+                            estoqueItem.Quantidade += item.Quantidade;
+                    }
+                    Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
                     textBox1.Clear();
                     Pedindo.Items.Clear();
+                    AtualizarCardapioListBox();
                     label3.Text = "R$ 0,00";
                 }
                 else
