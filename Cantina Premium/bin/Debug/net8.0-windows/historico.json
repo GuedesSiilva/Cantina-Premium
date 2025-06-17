@@ -66,5 +66,39 @@
     "DataHora": "2025-06-17T09:06:24.5135304-03:00",
     "Status": "- Entregue",
     "Tipo": " - Consumo"
+  },
+  {
+    "Id": 5,
+    "NomeCliente": "c",
+    "Itens": [
+      {
+        "ID": 6,
+        "Nome": "Hamb\u00FArguer Simples",
+        "Preco": 8,
+        "Quantidade": 1,
+        "Chapa": true
+      }
+    ],
+    "Quantidade": 0,
+    "DataHora": "2025-06-17T09:24:42.0257758-03:00",
+    "Status": "- Entregue",
+    "Tipo": " - Consumo"
+  },
+  {
+    "Id": 6,
+    "NomeCliente": "Pedro",
+    "Itens": [
+      {
+        "ID": 5,
+        "Nome": "Refrigerante Lata",
+        "Preco": 4.5,
+        "Quantidade": 2,
+        "Chapa": false
+      }
+    ],
+    "Quantidade": 0,
+    "DataHora": "2025-06-17T09:34:04.058709-03:00",
+    "Status": "- Entregue",
+    "Tipo": " - Consumo"
   }
 ]

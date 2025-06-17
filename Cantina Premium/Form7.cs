@@ -41,6 +41,17 @@ namespace Cantina_Premium
 
         private void Form7_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button5.Visible = true;
+                button1.Visible = false;
+            }
+            else
+            {
+                button5.Visible = false;
+                button1.Visible = true;
+            }
+
             // Últimos 5 finalizados
             var ultimosFinalizados = HistoricoGlobal.HistoricoPedidos
                 .Where(p => p.Status == "- Finalizado")
@@ -93,6 +104,13 @@ namespace Cantina_Premium
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox2.ClearSelected();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

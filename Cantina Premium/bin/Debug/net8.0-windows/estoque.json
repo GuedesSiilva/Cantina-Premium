@@ -38,14 +38,14 @@
     "ID": 5,
     "Nome": "Refrigerante Lata",
     "Preco": 4.5,
-    "Quantidade": 12,
+    "Quantidade": 10,
     "Chapa": false
   },
   {
     "ID": 6,
     "Nome": "Hamb\u00FArguer Simples",
     "Preco": 8,
-    "Quantidade": 10,
+    "Quantidade": 9,
     "Chapa": true
   },
   {

@@ -42,6 +42,11 @@ namespace Cantina_Premium
                 button5.Visible = true;
                 button4.Visible = false;
             }
+            else
+            {
+                button5.Visible = false;
+                button4.Visible = true;
+            }
             HistoricoGlobal.HistoricoPedidos = Persistencia.CarregarLista<Pedido>("historico.json");
             PedidosBalcao.Items.Clear();
             foreach (var pedido in HistoricoGlobal.HistoricoPedidos)

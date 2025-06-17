@@ -32,7 +32,12 @@ namespace Cantina_Premium
             if (UsuarioGlobal.UsuarioLogado == "admin")
             { 
              button6.Visible = true;
-                button5.Visible = false;
+             button5.Visible = false;
+            }
+            else
+            {
+                button6.Visible = false; 
+                button5.Visible = true;
             }
             Cardapio.Items.Clear();
             foreach (var item in Estoque.Itens.OrderBy(x => x.ID))

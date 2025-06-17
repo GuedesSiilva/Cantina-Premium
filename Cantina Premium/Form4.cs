@@ -50,6 +50,11 @@ namespace Cantina_Premium
                 button5.Visible = true;
                 button4.Visible = false;
             }
+            else
+            {
+                button5.Visible = false;
+                button4.Visible = true;
+            }
             Historico.Items.Clear();
             var historicoPedidos = Persistencia.CarregarLista<Pedido>("historico.json");
             if (historicoPedidos != null)
